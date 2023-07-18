@@ -137,7 +137,7 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    106k
+                    107k
                 </span>
                 
                 
@@ -380,7 +380,7 @@
 </ul>
 <h2 id="mark-su-lu-bo-te-yu-dai-kuan-mark"><mark>速率、波特与带宽</mark></h2>
 <p><strong>速率</strong>:数据传输速率</p>
-<pre><code>	- 码元传输速率(波特率) Baud →代表每秒发生的信号变化次数
+<pre><code class="language-css">	- 码元传输速率(波特率) Baud →代表每秒发生的信号变化次数
 	- 信息传输速率 b/s
 </code></pre>
 <p><strong>带宽:</strong> 指信号所具有频带的宽 HZ 同时表示单位时间内的最高数据率</p>
@@ -737,7 +737,7 @@
 <h5 id="bo-fen-duo-lu-fu-yong-wdm">波分多路复用(WDM)</h5>
 <p>光的频分多路复用</p>
 <h5 id="mark-ma-fen-fu-yong-cdm-mark"><mark>码分复用(CDM)</mark></h5>
-<pre><code class="language-txt">例题:共有四个站点进行码分多址通信,四个站的码片分别为:
+<pre><code class="language-css">例题:共有四个站点进行码分多址通信,四个站的码片分别为:
 
 A(-1,-1,-1,+1,+1,-1,+1,+1)
 B(-1,-1,+1,-1,+1,+1,+1,-1)
@@ -953,7 +953,7 @@ D(-1,+1,-1,-1,-1,-1,+1,-1)
 <p>MAC 地址(物理地址)</p>
 <p>MAC 地址长 6 字节,一般为连字符或冒号分隔</p>
 <p>12 个十六进制数表示如:</p>
-<pre><code>02-60-8c-e4-b1-21
+<pre><code class="language-css">02-60-8c-e4-b1-21
 </code></pre>
 <p>高 24 位为厂商代码</p>
 <p>低 24 位为厂商自行分配的网卡序列号</p>
@@ -1606,7 +1606,7 @@ D(-1,+1,-1,-1,-1,-1,+1,-1)
 <p>关于长度的标记需要记住,需要熟悉 IP 数据报首部的各个字段的意义与功能,但不需要记忆 IP 数据报首部,正常情况下如果需要参考首部,题目都会直接给出</p>
 </blockquote>
 <h3 id="ip-shu-ju-bao-fen-pian">IP 数据报分片</h3>
-<pre><code>一个数据报长度为4000B(固定首部长度)。现经过一个网络传送,但这此网络能够传送的数据最大长度为1500B。试问应当划分为几个短一点的数据报片?每个数据片段的数据字段长度、片偏移字段和MF标志应为何值?
+<pre><code class="language-css">一个数据报长度为4000B(固定首部长度)。现经过一个网络传送,但这此网络能够传送的数据最大长度为1500B。试问应当划分为几个短一点的数据报片?每个数据片段的数据字段长度、片偏移字段和MF标志应为何值?
 
 分析:
 1️⃣使用固定首部:IP数据报首部字节固定部分为20字节
@@ -1634,7 +1634,7 @@ D(-1,+1,-1,-1,-1,-1,+1,-1)
 1 1 0
 </code></pre>
 <p><strong>修改 MTU 的数值后需要注意!!</strong></p>
-<pre><code>一个长4000B的IP数据报(固定首部长度)现经过一个网络传送,但这此网络能够传送的数据最大长度为800B。试问应当划分为几个短一点的数据报片?每个数据片段的数据字段长度、片偏移字段和MF标志应为何值
+<pre><code class="language-css">一个长4000B的IP数据报(固定首部长度)现经过一个网络传送,但这此网络能够传送的数据最大长度为800B。试问应当划分为几个短一点的数据报片?每个数据片段的数据字段长度、片偏移字段和MF标志应为何值
 
 分析:
 1️⃣使用固定首部:IP数据报首部字节固定部分为20字节
@@ -1724,7 +1724,7 @@ D(-1,+1,-1,-1,-1,-1,+1,-1)
 ✅CIDR 使用“斜线记法” ，它又称为 CIDR 记法，即在 IP 地址后面加上一个斜线“/”，然后写上网络前缀所占的位数（这个数值对应于三层编址中子网掩码中 1 的个数）。<br>
 ✅CIDR 把网络前缀都相同的连续的 IP 地址组成“CIDR 地址块”。</p>
 <p><strong>CIDR 结构记法</strong></p>
-<pre><code>IP::=&#123;&lt;网络前缀&gt;,&lt;主机号&gt;&#125;
+<pre><code class="language-css">IP::=&#123;&lt;网络前缀&gt;,&lt;主机号&gt;&#125;
 </code></pre>
 <p><strong>CIDR 地址块</strong>:</p>
 <p>128.14.32.0/20 表示的地址块共有 212 个地址（因为斜线后面的 20 是网络前缀的位数，所以这个地址的主机号是 12 位）。这个地址块的起始地址是 128.14.32.0。在不需要指出地址块的起始地址时，也可将这样的地址块简称为“/20 地址块”。<br>
@@ -1867,7 +1867,7 @@ CIDR 地址块划分举例一个大学把 c 类地址分配给各个系</p>
 <p><strong>IPv6 地址的缩写</strong></p>
 <p>IPv4 地址通常使用点分十进制表示法。如果 IPv6 也用这种表示法,那么地址书写起来将相当长,所以 IPv6 采用了冒号 16 进制表示法,即用每 4 位二进制数用一个 16 进制数表示,并用冒号将每 4 位 16 进制数用冒号分隔</p>
 <p>例👇</p>
-<pre><code>4BF5:AA12:0216:FEBC:BA5F:039A:BE9A:2170
+<pre><code class="language-css">4BF5:AA12:0216:FEBC:BA5F:039A:BE9A:2170
 </code></pre>
 <p>每 16 位二进制我们将其称之为域</p>
 <p><strong>当 16 位域的开头有一些 0,可以直接省略,但必须保留 1 个字符</strong></p>
@@ -2022,7 +2022,7 @@ CIDR 地址块划分举例一个大学把 c 类地址分配给各个系</p>
 <p>仅在客户进程运行时才动态选择,又称临时端口(短暂端口)</p>
 <h3 id="tao-jie-zi">套接字</h3>
 <p>在网络中通过 IP 地址来标识区别不同的主机。通过端口号来标识和区分一台主机中不同的应用进程。端口号拼接到 IP 地址即构成<code>套接字Socket</code>。在网络中采用发送方和接受方的套接字来识别端点。套接字,实际上是一个通信端点,即:</p>
-<pre><code>套接字Socket = (IP地址:端口号)
+<pre><code class="language-css">套接字Socket = (IP地址:端口号)
 </code></pre>
 <p>它唯一地标识网络中一台主机和其上的一个应用(进程)</p>
 <h2 id="wu-lian-jie-fu-wu-he-mian-xiang-lian-jie-fu-wu">无连接服务和面向连接服务</h2>
@@ -2122,7 +2122,7 @@ CIDR 地址块划分举例一个大学把 c 类地址分配给各个系</p>
 <p>接收缓存用来存放以下数据:</p>
 <p>① 按序到达但尚未被接受应用程序读取的数据</p>
 <p>② 不按序到达的数据</p>
-<pre><code>4) TCP是面向字节流的,虽然应用程序和TCP的交互是一次一个数据块(大小不等),但TCP把应用程序交下来的数据仅视为一连串的无结构的字节流
+<pre><code class="language-css">4) TCP是面向字节流的,虽然应用程序和TCP的交互是一次一个数据块(大小不等),但TCP把应用程序交下来的数据仅视为一连串的无结构的字节流
 4) TCP提供可靠交付的服务,保证传送的数据无差错,不丢失,不重复且有序
 </code></pre>
 <h3 id="tcp-bao-wen-duan">TCP 报文段</h3>
@@ -2274,7 +2274,7 @@ MSL 是任何 IP 数据报能够在网络中存活的最长时间。我们知道
 <h3 id="tcp-liu-liang-kong-zhi">TCP 流量控制</h3>
 <p>基于数据链路层所介绍的<a href="####%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6">滑动窗口</a></p>
 <p><code>传输层</code>和<code>数据链路层</code>的流量控制的区别是:</p>
-<pre><code>1) 传输层是定义`端到端之间的流量控制`,数据链路层定义中间`两个相邻结点的流量控制`
+<pre><code class="language-css">1) 传输层是定义`端到端之间的流量控制`,数据链路层定义中间`两个相邻结点的流量控制`
 1) 传输层的窗口可以动态变化,数据链路层的滑动窗口协议的窗口大小不能动态变化
 </code></pre>
 <h3 id="tcp-de-yong-sai-kong-zhi">TCP 的拥塞控制</h3>
@@ -2297,7 +2297,7 @@ MSL 是任何 IP 数据报能够在网络中存活的最长时间。我们知道
 </ol>
 <p>发送方根据字节估算的网络拥塞程度而设置的窗口值</p>
 <p>发送窗口的上限值应取接收窗口 rwnd 和拥塞窗口 cwnd 中较小的一个即:</p>
-<pre><code>发送MAX = min[rwnd,cwnd]
+<pre><code class="language-css">发送MAX = min[rwnd,cwnd]
 </code></pre>
 <h5 id="man-kai-shi">慢开始</h5>
 <p>思想:</p>
@@ -2496,7 +2496,7 @@ F -- 否 --&gt; E
   <mark>To 是必需的关键字</mark>，后面填入<code>一个</code>或<code>多个</code>收件人的电子邮件地址。电子邮件地址的规定格式为：收件人邮箱名@邮箱所在主机的域名，如abc@test.com，其中收信人邮箱名即用户名，abc 在 <a target="_blank" rel="noopener" href="http://test.com">test.com</a> 这个邮件服务器上必须是唯一的。这也就保证了abc@test.com这个邮件地址在整个因特网上是唯一的。<br>
   Subject 是可选关键字，是邮件的主题，反映了邮件的主要内容<br>
    当然，还有一个必填的关键字是 From，但它通常由邮件系统自动填入。首部和主体之间用一个空行进行分割。典型的邮件内容如下：</p>
-<pre><code class="language-mail">From:hoopdog@hust.edu.com
+<pre><code class="language-css">From:hoopdog@hust.edu.com
 To:abc@test.com
 Subject:Say hello to Internet
 
@@ -2916,7 +2916,7 @@ balabalabala...
 <p>在实际应用中常使用 🍪<code>cookie/token + 数据库</code>的方式来跟踪用户活动</p>
 <p>客户端发送 http 请求,服务器接受 client 请求后建立一个<code>session</code>,并 sent 一个 http respone 到 client,这个 response head 中包含了一个<code>set-cookie头部</code>该头部包含<code>sessionid</code></p>
 <p><code>set-cookie</code>格式如下:</p>
-<pre><code>set-cookie : value[; Expries : date][;Domain = domain][;Path = path][;Max-Age : value][;Secure ...]
+<pre><code class="language-css">set-cookie : value[; Expries : date][;Domain = domain][;Path = path][;Max-Age : value][;Secure ...]
 </code></pre>
 <p><em>Expries</em>:cookie 最长有效时间(时间戳),没有设置则表示这是一个会话期 cookie,当会话被关闭此时会话期 cookie 在彼时被移除</p>
 <blockquote>
@@ -2929,7 +2929,7 @@ balabalabala...
 <p><em>HttpOnly</em>:用于阻止 JS 通过 Document.cookie 属性访问 cookie,其用来防范跨站攻击脚本 xss</p>
 <p><em>samesite</em>:<samesite-value>:允许一则 cookie 不随跨站请求一起被发送,这可以一定程度上防范跨站请求伪造攻击(CSRF)</samesite-value></p>
 <p>samesite-value:</p>
-<pre><code>	1) strict:意味着浏览器只对同一站点发送请求,即请求来自设置cookie的站点(同域,同协议)
+<pre><code class="language-css">	1) strict:意味着浏览器只对同一站点发送请求,即请求来自设置cookie的站点(同域,同协议)
 	1) Lax:cookie不会在跨站请求中被发送。如加载图像或frame的请求,但cookie在用户从外站导航到源站时cookie也将被发送,这是samesite未被设置时的默认行为
 	1) None:浏览器在跨站和同站均会发送cookie,设置这一值的同时必须同时设置secure属性
 </code></pre>
@@ -3000,9 +3000,9 @@ balabalabala...
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">3 <p>Articles</p></a></li>
-                    <li><a href="/categories">4 <p>Categories</p></a></li>
-                    <li><a href="/tags">3 <p>Tags</p></a></li>
+                    <li><a href="/">4 <p>Articles</p></a></li>
+                    <li><a href="/categories">6 <p>Categories</p></a></li>
+                    <li><a href="/tags">4 <p>Tags</p></a></li>
                 </ul>
             </div>
             
