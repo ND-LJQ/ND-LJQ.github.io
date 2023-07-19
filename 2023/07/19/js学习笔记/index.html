@@ -18,11 +18,10 @@
     
     <meta name="keywords" content="刘三刀的blog," />
      
-    <meta name="description" content="小知识
-浏览器内核
+    <meta name="description" content="小知识浏览器内核
 Webkit 苹果开发 用于 Safari
 Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Opera 等浏览器
-浏览," />
+浏览器," />
      
     <meta name="author" content="ND_LJQ" />
      
@@ -133,13 +132,13 @@ Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Op
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    22k
+                    25k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    20 mins.
+                    22 mins.
                 </span>
                 
                 
@@ -173,29 +172,24 @@ Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Op
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="xiao-zhi-shi">小知识</h1>
-<p>浏览器内核</p>
+            <h1 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h1><p>浏览器内核</p>
 <p>Webkit 苹果开发 用于 Safari</p>
 <p>Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Opera 等浏览器</p>
-<h1 id="liu-lan-qi-de-xuan-ran-guo-cheng">浏览器的渲染过程</h1>
-<p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%94%A8%E6%88%B7%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E4%B8%AD%E8%BE%93%E5%85%A5url.svg" alt></p>
-<h1 id="js-yin-qing">Js 引擎</h1>
-<p><strong>js 引擎</strong>将 <strong>js 代码</strong>翻译成<strong>CPU 指令</strong>来执行</p>
-<h2 id="v-8-yin-qing">V8 引擎</h2>
-<p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/V8%E5%BC%95%E6%93%8E%E8%A7%A3%E6%9E%90js.png" alt></p>
+<h1 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h1><p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/用户在浏览器地址栏中输入url.svg" alt></p>
+<h1 id="Js-引擎"><a href="#Js-引擎" class="headerlink" title="Js 引擎"></a>Js 引擎</h1><p><strong>js 引擎</strong>将 <strong>js 代码</strong>翻译成<strong>CPU 指令</strong>来执行</p>
+<h2 id="V8-引擎"><a href="#V8-引擎" class="headerlink" title="V8 引擎"></a>V8 引擎</h2><p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/V8引擎解析js.png" alt></p>
 <p>1.js 引擎在解析成 AST 语法树中会在堆内存中默认创建一个全局对象 globalObject ,并将我们创建的属性名(值为 undefined)(普通变量)添加到 该全局对象中</p>
 <p>预解析时函数会在内存中创建一个储存空间(函数对象) (函数 的父级作用域在定义时就已经确定,不会因调用的位置而改变)</p>
-<pre><code class="language-js">解析时全局对象时(GO)
+<pre><code class="lang-js">解析时全局对象时(GO)
 会首先解析变量 后声明函数并赋值
 </code></pre>
 <pre><code>在预解析函数时(AO)
 首先形参和变量的声明
 然后实参赋值给形参
 最后声明函数并赋值
-</code></pre>
-<p><img src="images/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Snipaste_2022-09-02_16-30-06.png" alt></p>
+</code></pre><p><img src="images/js学习笔记/Snipaste_2022-09-02_16-30-06.png" alt></p>
 <p>然后在全局对象(GO)中则储存函数的地址</p>
-<pre><code class="language-js">GlobalObject:&#123;
+<pre><code class="lang-js">GlobalObject:&#123;
     name:undefined,
     foo:0x...
 &#125;
@@ -203,7 +197,7 @@ Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Op
 <p>2.运行代码时</p>
 <p>V8 引擎为了执行代码,其内部会有一个执行上下文栈(Execution Context Stack)(函数调用栈) 内放将要执行的函数</p>
 <p>全局代码执行顺序</p>
-<pre><code class="language-js">const name = 'ljq';
+<pre><code class="lang-js">const name = &#39;ljq&#39;;
 const num1 = 2;
 const num2 = 5;
 const num3 = num1 + num2;
@@ -215,11 +209,10 @@ const num3 = num1 + num2;
 在执行代码中的变量和函数声明会作为环境记录(Environment Record) 添加到变量环境中,
 
 对于函数,其参数也会被作为环境记录被添加到变量环境中
-</code></pre>
-<p><img src="images/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Snipaste_2022-09-02_15-29-5.png" alt></p>
+</code></pre><p><img src="images/js学习笔记/Snipaste_2022-09-02_15-29-5.png" alt></p>
 <p>而函数则较为特殊</p>
 <p>全局函数的执行过程</p>
-<pre><code class="language-js">function foo(num) &#123;
+<pre><code class="lang-js">function foo(num) &#123;
   var m = 10;
   var n = 20;
 &#125;
@@ -227,9 +220,9 @@ const num3 = num1 + num2;
 foo();
 </code></pre>
 <p>接着在执行上下文栈中创建一个函数执行上下文(FEC) (函数实例)</p>
-<p><img src="images/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Snipaste_2022-09-02_15-29-50.png" alt="Snipaste_2022-09-02_15-29-50"></p>
+<p><img src="images/js学习笔记/Snipaste_2022-09-02_15-29-50.png" alt="Snipaste_2022-09-02_15-29-50"></p>
 <p>此时 AO(Actiction Object)为</p>
-<pre><code class="language-js">AO:&#123;
+<pre><code class="lang-js">AO:&#123;
     num:undefined,
     m:undefined,
     n:undefined
@@ -239,14 +232,14 @@ foo();
 <p>AO 中的属性被依次赋值</p>
 <p>当函数执行完后,函数执行上下文将会被弹出执行上下文栈(被销毁)</p>
 <p>面试题</p>
-<pre><code class="language-js">function foo() &#123;
+<pre><code class="lang-js">function foo() &#123;
   m = 10;
   // 没有使用变量关键字会被声明到全局对象中
 &#125;
 
 console.log(m); // 10
 </code></pre>
-<pre><code class="language-js">function foo() &#123;
+<pre><code class="lang-js">function foo() &#123;
   var a = (b = 10);
   // 此时这句语句在js引擎中会被转化为
   // b = 10 ; var a = 10 (从右向左执行)
@@ -255,35 +248,30 @@ console.log(m); // 10
 console.log(a); // erro a is not defined
 console.log(b); // 10
 </code></pre>
-<h1 id="js-de-nei-cun-guan-li-he-bi-bao">js 的内存管理和闭包</h1>
-<p>对于基本数据类型内存的分配时会直接在栈空间内分配</p>
+<h1 id="js-的内存管理和闭包"><a href="#js-的内存管理和闭包" class="headerlink" title="js 的内存管理和闭包"></a>js 的内存管理和闭包</h1><p>对于基本数据类型内存的分配时会直接在栈空间内分配</p>
 <p>对于复杂数据类型内存的分配时会直接在堆空间内分配</p>
-<h2 id="js-de-la-ji-hui-shou-gc">js 的垃圾回收(GC)</h2>
-<p>常见的 GC 算法</p>
+<h2 id="js-的垃圾回收-GC"><a href="#js-的垃圾回收-GC" class="headerlink" title="js 的垃圾回收(GC)"></a>js 的垃圾回收(GC)</h2><p>常见的 GC 算法</p>
 <p>引用计数</p>
 <p>标记清除:</p>
 <p>设置一个根对象,垃圾回收器会定期从这个根开始找所有从根开始有引用到的对象,对于那些没有引用到的对象,就认为是不可用对象</p>
 <p>V8 GC 优化策略</p>
 <p>因为 js 在 gc 时会停止响应其他操作,所以要通过优化来避免长时间的停止响应</p>
 <p>1.分代回收</p>
-<pre><code class="language-js">通过区分&quot;临时&quot;和&quot;持久&quot;对象,多回收&quot;临时对象区&quot;,少回收&quot;持久对象区&quot;,减少每次需要的变量,减少每次GC耗时
+<pre><code class="lang-js">通过区分&quot;临时&quot;和&quot;持久&quot;对象,多回收&quot;临时对象区&quot;,少回收&quot;持久对象区&quot;,减少每次需要的变量,减少每次GC耗时
 </code></pre>
 <p>2.增量 GC</p>
 <pre><code>就是每次处理一部分
 js运行 -&gt; gc运行js暂停 -&gt; js运行 -&gt; gc运行js暂停
-</code></pre>
-<h2 id="bi-bao">闭包</h2>
-<p>在计算机科学中</p>
+</code></pre><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>在计算机科学中</p>
 <pre><code>闭包在实现上是一个结构体,它储存了一个函数和其关联的环境
 闭包跟函数最大的区别就是,当捕捉闭包的时候,它的自由变量会在捕捉的时候就被确定,这样即使脱离了捕捉时的上下文,它也能照常运行
+</code></pre><p>在 JavaScript 中</p>
+<pre><code class="lang-js">一个函数和对其周围状态的引用绑定在一起 这就叫闭包
 </code></pre>
-<p>在 JavaScript 中</p>
-<pre><code class="language-js">一个函数和对其周围状态的引用绑定在一起 这就叫闭包
-</code></pre>
-<pre><code class="language-js">function foo() &#123;
-  var name = 'ljq';
+<pre><code class="lang-js">function foo() &#123;
+  var name = &#39;ljq&#39;;
   function bar() &#123;
-    console.log('bar', name);
+    console.log(&#39;bar&#39;, name);
   &#125;
 
   return bar;
@@ -295,11 +283,10 @@ fn();
 <p>在 fn = foo() 被执行后 GO 中的 fn 值已经被赋值为了 bar() 的地址值</p>
 <p>foo 的 FEC 会被销毁 但是 bar 依旧能访问到 foo 中的 “name” 值</p>
 <p>此时 函数 bar()和 “name” 变量 构成一个闭包(函数和其能访问的外层作用域的自由变量共同组成闭包)</p>
-<h3 id="bi-bao-de-nei-cun-xie-lu">闭包的内存泄露</h3>
-<pre><code class="language-js">function foo() &#123;
-  var name = 'ljq';
+<h3 id="闭包的内存泄露"><a href="#闭包的内存泄露" class="headerlink" title="闭包的内存泄露"></a>闭包的内存泄露</h3><pre><code class="lang-js">function foo() &#123;
+  var name = &#39;ljq&#39;;
   function bar() &#123;
-    console.log('foo', name);
+    console.log(&#39;foo&#39;, name);
   &#125;
   return bar;
 &#125;
@@ -307,11 +294,10 @@ fn();
 var fn = foo();
 fn();
 </code></pre>
-<h1 id="han-shu-zhong-de-this-zhi-xiang">函数中的 this 指向</h1>
-<p>函数在执行时才会绑定 this</p>
+<h1 id="函数中的-this-指向"><a href="#函数中的-this-指向" class="headerlink" title="函数中的 this 指向"></a>函数中的 this 指向</h1><p>函数在执行时才会绑定 this</p>
 <p>在浏览器中 全局对象中 this 指向 window</p>
 <p>在 nodejs 中的 this 是一个空对象</p>
-<pre><code class="language-js">// this指向什么与函数所处位置无关
+<pre><code class="lang-js">// this指向什么与函数所处位置无关
 // this的指向与函数被调用的方式有关
 
 function foo() &#123;
@@ -321,17 +307,16 @@ function foo() &#123;
 foo(); // window
 
 const obj = &#123;
-  name: 'ljq',
+  name: &#39;ljq&#39;,
   foo: foo,
 &#125;;
 
 console.log(obj.foo()); // obj对象
 
-console.log(foo.apply('abc')); // String:&#123;&quot;abc&quot;&#125;
+console.log(foo.apply(&#39;abc&#39;)); // String:&#123;&quot;abc&quot;&#125;
 </code></pre>
 <p>优先级从上至下以此升高</p>
-<h2 id="mo-ren-bang-ding">默认绑定</h2>
-<pre><code class="language-js">// 函数调用的时无任何调用前缀 默认绑定时this指向全局对象window(非严格模式)
+<h2 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h2><pre><code class="lang-js">// 函数调用的时无任何调用前缀 默认绑定时this指向全局对象window(非严格模式)
 function fn() &#123;
   console.log(this); // window
   let fn1 = function () &#123;
@@ -349,17 +334,16 @@ function fn() &#123;
   console.log(this); // window
 &#125;
 
-('use strict');
+(&#39;use strict&#39;);
 function fn1() &#123;
   console.log(this); // undefined
   console.log(this.name);
 &#125;
 
-var name = 'dnmd';
-fn1(); // TypeError: Cannot read property 'name' of undefined
+var name = &#39;dnmd&#39;;
+fn1(); // TypeError: Cannot read property &#39;name&#39; of undefined
 </code></pre>
-<h2 id="jian-jie-han-shu-yin-yong">间接函数引用</h2>
-<pre><code class="language-js">const obj1 = &#123;
+<h2 id="间接函数引用"><a href="#间接函数引用" class="headerlink" title="间接函数引用"></a>间接函数引用</h2><pre><code class="lang-js">const obj1 = &#123;
     name:&quot;obj1&quot;
     foo:function()&#123;
         console.log(this)
@@ -372,14 +356,13 @@ const obj2 = &#123;
 
 (obj2.bar = obj1.foo)() // 作为独立的函数调用 output:window
 </code></pre>
-<h2 id="yin-shi-bang-ding">隐式绑定</h2>
-<pre><code class="language-js">// 他的调用位置中,是通过某个对象发起的函数调用
+<h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><pre><code class="lang-js">// 他的调用位置中,是通过某个对象发起的函数调用
 function foo() &#123;
   console.log(this);
 &#125;
 
 const obj = &#123;
-  name: 'ljq',
+  name: &#39;ljq&#39;,
   foo: foo,
 &#125;;
 
@@ -391,7 +374,7 @@ obj.foo(); // obj
 
 obj1.obj.foo(); // obj
 
-const div = document.querySelector('.box');
+const div = document.querySelector(&#39;.box&#39;);
 div.onclick = function () &#123;
   console.log(this);
 &#125;;
@@ -400,27 +383,26 @@ div.onclick = function () &#123;
 // &lt;div class=&quot;box&quot; style=&quot;width: 100px;height: 100px;background-color: red;&quot;&gt;&lt;/div&gt;
 // 所以其应该是进行了隐式绑定
 </code></pre>
-<h2 id="xian-shi-bang-ding">显式绑定</h2>
-<pre><code class="language-js">// 通过apply,call,bind进行绑定
+<h2 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h2><pre><code class="lang-js">// 通过apply,call,bind进行绑定
 
 function foo() &#123;
   console.log(this);
 &#125;
 
-var newFoo = foo.bind('aaa');
+var newFoo = foo.bind(&#39;aaa&#39;);
 
 newFoo(); // String
 
-const div = document.querySelector('.box');
-div.addEventListener('click', function () &#123;
+const div = document.querySelector(&#39;.box&#39;);
+div.addEventListener(&#39;click&#39;, function () &#123;
   console.log(this);
 &#125;);
 
-div.addEventListener('click', function () &#123;
+div.addEventListener(&#39;click&#39;, function () &#123;
   console.log(this);
 &#125;);
 
-div.addEventListener('click', function () &#123;
+div.addEventListener(&#39;click&#39;, function () &#123;
   console.log(this);
 &#125;);
 
@@ -432,7 +414,7 @@ div.addEventListener('click', function () &#123;
 // &lt;div class=&quot;box&quot; style=&quot;width: 100px;height: 100px;background-color: red;&quot;&gt;&lt;/div&gt;
 </code></pre>
 <p>忽略显式绑定</p>
-<pre><code class="language-js">// apply,bind,call 当传入的值为 null/undefined 时,自动将this绑定为全局对象
+<pre><code class="lang-js">// apply,bind,call 当传入的值为 null/undefined 时,自动将this绑定为全局对象
 function foo() &#123;
   console.log(this);
 &#125;
@@ -442,8 +424,7 @@ foo.apply(undefined); // window
 const data = foo.bind(null);
 data(); // window
 </code></pre>
-<h2 id="new-bang-ding">new 绑定</h2>
-<pre><code class="language-js">// 我们通过一个new关键字调用一个函数时(构造器),这个时候this是在调用这个构造器时创建出来的对象
+<h2 id="new-绑定"><a href="#new-绑定" class="headerlink" title="new 绑定"></a>new 绑定</h2><pre><code class="lang-js">// 我们通过一个new关键字调用一个函数时(构造器),这个时候this是在调用这个构造器时创建出来的对象
 // this = 创建出来的对象
 // 这个过程就是new绑定
 
@@ -453,8 +434,7 @@ function foo(name, age) &#123;
 
 var p = new foo(); // foo&#123;&#125;
 </code></pre>
-<h2 id="jian-tou-han-shu">箭头函数</h2>
-<pre><code class="language-js">// 如果函数的执行体只有一行,那么&#123;&#125;可以省略,并且默认将这行代码的执行结果作为返回值
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><pre><code class="lang-js">// 如果函数的执行体只有一行,那么&#123;&#125;可以省略,并且默认将这行代码的执行结果作为返回值
 // 箭头函数不适用this的四种规则,而是调用上层作用域中的this
 
 箭头函数与普通函数的区别
@@ -466,9 +446,9 @@ var p = new foo(); // foo&#123;&#125;
 6.箭头函数不会创建自己的this,其会继承上层作用域的this,且创建的上层作用域的
 </code></pre>
 <p>this 面试题</p>
-<pre><code class="language-js">var name = 'ljq';
+<pre><code class="lang-js">var name = &#39;ljq&#39;;
 var person = &#123;
-  name: 'person',
+  name: &#39;person&#39;,
   sayName: function () &#123;
     console.log(this.name);
   &#125;,
@@ -482,9 +462,9 @@ function sayName() &#123;
 &#125;
 sayName();
 </code></pre>
-<pre><code class="language-js">var name = 'ljq';
+<pre><code class="lang-js">var name = &#39;ljq&#39;;
 var person1 = &#123;
-  name: 'person1',
+  name: &#39;person1&#39;,
   foo1: function () &#123;
     console.log(this.name);
   &#125;,
@@ -501,7 +481,7 @@ var person1 = &#123;
   &#125;,
 &#125;;
 
-var person2 = &#123; name: 'person2' &#125;;
+var person2 = &#123; name: &#39;person2&#39; &#125;;
 
 person1.foo1(); // person1
 person1.foo1.call(person2); // person2
@@ -517,17 +497,14 @@ person1.foo4.call(person2)(); // persno2
 </code></pre>
 <p>实现 apply,call,bind(手写 )</p>
 <pre><code>
+
+</code></pre><p>arguments 的使用</p>
+<pre><code class="lang-js">// 在浏览器中全局状态下没有arguments , nodejs下有
 </code></pre>
-<p>arguments 的使用</p>
-<pre><code class="language-js">// 在浏览器中全局状态下没有arguments , nodejs下有
-</code></pre>
-<h1 id="han-shu-shi-bian-cheng">函数式编程</h1>
-<h2 id="chun-han-shu">纯函数</h2>
-<pre><code class="language-js">// 确定的输入,一定会产生确定的输出
+<h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h2><pre><code class="lang-js">// 确定的输入,一定会产生确定的输出
 // 函数的执行过程中,不会产生副作用(副作用的概念就是,在执行一个函数的时候,除了返回函数值外,还对调用函数产生了附加的影响,例如修改的全局变量,修改参数或者改变外部储存)
 </code></pre>
-<h2 id="ke-li-hua">柯里化</h2>
-<pre><code class="language-js">// 将多个传入参数,拆分成多个函数调用的过程
+<h2 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h2><pre><code class="lang-js">// 将多个传入参数,拆分成多个函数调用的过程
 const sum = function (x) &#123;
   return function (y) &#123;
     return function (z) &#123;
@@ -553,9 +530,9 @@ const log = function (date, type, message) &#123;
   console.log(`[$&#123;date.getHours()&#125;:$&#123;date.getMinutes()&#125;][$&#123;type&#125;]:[$message]`);
 &#125;;
 
-log(new Date(), 'DEBUG', '查找到轮播图BUG');
-log(new Date(), 'DEBUG', '查找到菜单BUG');
-log(new Date(), 'DEBUG', '查找到数据BUG');
+log(new Date(), &#39;DEBUG&#39;, &#39;查找到轮播图BUG&#39;);
+log(new Date(), &#39;DEBUG&#39;, &#39;查找到菜单BUG&#39;);
+log(new Date(), &#39;DEBUG&#39;, &#39;查找到数据BUG&#39;);
 
 //柯里化的优化
 const log1 = (date) =&gt; (type) =&gt; (message) =&gt;
@@ -564,24 +541,22 @@ const log1 = (date) =&gt; (type) =&gt; (message) =&gt;
 // 定制化
 // 如果要打印的都是当前时间
 const nowlog = log1(new Date());
-nowlog('DEBUG')('查找到菜单BUG');
-nowlog('DEBUG')('查找到轮播图BUG');
+nowlog(&#39;DEBUG&#39;)(&#39;查找到菜单BUG&#39;);
+nowlog(&#39;DEBUG&#39;)(&#39;查找到轮播图BUG&#39;);
 
 // 自动转柯里化函数的实现(手写)
 </code></pre>
-<h2 id="zu-he-han-shu-shou-xie">组合函数(手写)</h2>
-<pre><code class="language-js">
+<h2 id="组合函数-手写"><a href="#组合函数-手写" class="headerlink" title="组合函数(手写)"></a>组合函数(手写)</h2><pre><code class="lang-js">
+
 </code></pre>
-<h1 id="yan-ge-mo-shi">严格模式</h1>
-<pre><code class="language-js">// 严格模式下,不允许静默错误
+<h1 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h1><pre><code class="lang-js">// 严格模式下,不允许静默错误
 // 不允许原先的八进制
 // with 语句不允许使用
 // eval函数不允许向上引用变量
 // 自执行函数(默认绑定)会指向undefined
 // setTimeout的this不变(指向window)
 </code></pre>
-<h1 id="js-de-mian-xiang-dui-xiang">JS 的面向对象</h1>
-<pre><code class="language-js">Object.defineProperty(objName,objKeyName,descriptor//属性描述符) // 对对象中的属性做操作
+<h1 id="JS-的面向对象"><a href="#JS-的面向对象" class="headerlink" title="JS 的面向对象"></a>JS 的面向对象</h1><pre><code class="lang-js">Object.defineProperty(objName,objKeyName,descriptor//属性描述符) // 对对象中的属性做操作
 // 数据属性描述符
   Configurable:表示属性是否能够通过delete删除属性 false表示不可配置(删除,修改)
   也不可以重新定义属性描述符
@@ -594,7 +569,7 @@ nowlog('DEBUG')('查找到轮播图BUG');
   1.隐藏某一个私有属性不被外界直接使用和赋值
     js并没有私有属性的定义 社区中默认 _keyName为私有属性
   2.截获某一个属性它访问和设置值的过程
-	get:function()&#123;&#125;
+    get:function()&#123;&#125;
     set:function()&#123;&#125;
 
 
@@ -628,8 +603,7 @@ Object.getOwnPropertyDescriptors()
 Object.seal(obj_name) // 禁止对象配置/修改删除里面的属性
 Object.freeze(obj_name) // 属性不可修改
 </code></pre>
-<h2 id="gong-han-mo-shi">工厂模式</h2>
-<pre><code class="language-JS">// 工厂模式:工厂函数
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><pre><code class="lang-JS">// 工厂模式:工厂函数
 function createPerson(name,age,height,address)&#123;
     const newObejct = &#123;&#125;
     newObject.name = name
@@ -642,8 +616,7 @@ function createPerson(name,age,height,address)&#123;
 
 const p1 = createPerson(&quot;ljq&quot;,20,176,&quot;株洲市&quot;)
 </code></pre>
-<h2 id="gou-zao-han-shu">构造函数</h2>
-<pre><code class="language-js">// new 操作符
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code class="lang-js">// new 操作符
 当一个new操作符被调用,那么他会执行如下操作
 1.在内存中创建一个新的空对象
 2.这个对象内部的prototype属性会被赋值为该构造函数的prototype属性
@@ -653,8 +626,7 @@ const p1 = createPerson(&quot;ljq&quot;,20,176,&quot;株洲市&quot;)
 
 手写
 </code></pre>
-<h1 id="ji-cheng-yu-yuan-xing-lian">继承与原型链</h1>
-<pre><code class="language-js">// 我们每个对象中提供了一个prototype,这个属性可以称为对象的原型(隐式原型)
+<h1 id="继承与原型链"><a href="#继承与原型链" class="headerlink" title="继承与原型链"></a>继承与原型链</h1><pre><code class="lang-js">// 我们每个对象中提供了一个prototype,这个属性可以称为对象的原型(隐式原型)
 // 浏览器和node中支持查询隐式原型(__proto__)
 // ES5后提供了一个方法查看原型
 Object.getPrototypeOf(obj_name);
@@ -666,14 +638,14 @@ Object.getPrototypeOf(obj_name);
 console.log(foo.prototype);
 </code></pre>
 <p>当函数被 new 关键字创建后,他的执行过程为</p>
-<pre><code class="language-js">function Foo() &#123;&#125;
+<pre><code class="lang-js">function Foo() &#123;&#125;
 
 var p1 = new Foo();
 var p2 = new Foo();
 </code></pre>
-<img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Users\ND_LJQ\Desktop\js\images\无标题.png" alt="无标题" style="zoom:200%;">
+<p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Users\ND_LJQ\Desktop\js\images\无标题.png" alt="无标题" style="zoom:200%;"></p>
 <p>创建对象方案</p>
-<pre><code class="language-js">// 将函数通用属性加入函数原型
+<pre><code class="lang-js">// 将函数通用属性加入函数原型
 function Person(name, age, height, address) &#123;
   this.name = name;
   this.age = age;
@@ -682,20 +654,18 @@ function Person(name, age, height, address) &#123;
 &#125;
 
 Person.prototype.eating = function () &#123;
-  console.log(this.name + '在吃东西');
+  console.log(this.name + &#39;在吃东西&#39;);
 &#125;;
 
 Person.prototype.running = function () &#123;
-  console.log(this.name + '在跑步');
+  console.log(this.name + &#39;在跑步&#39;);
 &#125;;
 </code></pre>
-<h2 id="yuan-xing-lian">原型链</h2>
-<pre><code class="language-js">
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><pre><code class="lang-js">
+
 </code></pre>
-<p>参数中的&quot;[]&quot;代表可选</p>
-<h1 id="cao-zuo-zi-fu-chuan-de-fang-fa">操作字符串的方法</h1>
-<h2 id="index-of">indexOf()</h2>
-<pre><code class="language-js">String.indexOf(searchValue, [fromIndex]);
+<p>参数中的”[]”代表可选</p>
+<h1 id="操作字符串的方法"><a href="#操作字符串的方法" class="headerlink" title="操作字符串的方法"></a>操作字符串的方法</h1><h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h2><pre><code class="lang-js">String.indexOf(searchValue, [fromIndex]);
 // 返回子字符或字符串在父字符串中首次出现的索引位置
 // 若子字符串不存在则会返回 -1
 // 若 fromIndex 大于字符串长度,则会返回父字符串长度
@@ -703,21 +673,17 @@ Person.prototype.running = function () &#123;
 String.lastIndexOf(searchValue, [fromIndex]);
 // 返回子字符或字符串在父字符串中最后一次出现的索引位置
 </code></pre>
-<h2 id="char-at">charAt()</h2>
-<pre><code class="language-js">String.charAt(index); // 获得字符串指定位置的字符
+<h2 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h2><pre><code class="lang-js">String.charAt(index); // 获得字符串指定位置的字符
 </code></pre>
-<h2 id="touppercase">touppercase()</h2>
-<pre><code class="language-js">String.toUpperCase();
+<h2 id="touppercase"><a href="#touppercase" class="headerlink" title="touppercase()"></a>touppercase()</h2><pre><code class="lang-js">String.toUpperCase();
 // 将字符串中的字符全变为大写后返回一个新字符串,原字符串不变
 String.tolowerCase();
 // 将字符串中的字符全变为小写后返回一个新字符串,原字符串不变
 </code></pre>
-<h2 id="concat">concat()</h2>
-<pre><code class="language-js">String.concat(str, [...strN]);
+<h2 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h2><pre><code class="lang-js">String.concat(str, [...strN]);
 // 将一个或多个字符串与原字符串串联合并,返回一个新字符串
 </code></pre>
-<h2 id="slice">slice()</h2>
-<pre><code class="language-js">String.slice(beginIndex, [endIndex]);
+<h2 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h2><pre><code class="lang-js">String.slice(beginIndex, [endIndex]);
 // 提取父字符串自 beginIndex 位置开始 [到 endIndex 结束]的字符/字符串
 // 并返回一个新字符串,原字符串不变
 // slice()不传参数会返回一个跟原数组一样的新数组
@@ -725,85 +691,72 @@ String.tolowerCase();
 // 则其值看成 str.length-beginIndex/endIndex
 // 若 beginIndex 大于 endIndex 则 slice 的执行的效果为 从 beginIndex 开始向前截取到 endIndex
 </code></pre>
-<h2 id="sub-string">subString()</h2>
-<pre><code class="language-js">String.subString(indexStart, [indexEnd]);
+<h2 id="subString"><a href="#subString" class="headerlink" title="subString()"></a>subString()</h2><pre><code class="lang-js">String.subString(indexStart, [indexEnd]);
 // 返回一个提取自字符串 indexStart 开始[至indexEnd 结束]的一个新的子字符串
-// 如果参数中的值小于 '0' 或者 'NaN' 则自动默认为0
+// 如果参数中的值小于 &#39;0&#39; 或者 &#39;NaN&#39; 则自动默认为0
 // 如果参数中的任意一值大于父字符串的长度 那么该值默认为父字符串的长度
 // 如果 indexStart 大于 indexEnd，则 substring 的执行效果就像两个参数调换了一样。
 // 即 String.subString(indexEnd,indexStart)
 </code></pre>
-<h2 id="sub-str">subStr()</h2>
-<pre><code class="language-js">String.subStr(strat, [length]); //该方法半遗弃,尽量避免使用
+<h2 id="subStr"><a href="#subStr" class="headerlink" title="subStr()"></a>subStr()</h2><pre><code class="lang-js">String.subStr(strat, [length]); //该方法半遗弃,尽量避免使用
 </code></pre>
-<h2 id="split">split()</h2>
-<pre><code class="language-js">String.split([separator, [limit]]);
+<h2 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h2><pre><code class="lang-js">String.split([separator, [limit]]);
 // 以 separator 字符/字符串或正则表达式来切割原字符 ,用 limit(number) 来限制返回的数组中
 // 切割后的片段的数量
 // 若不传参,则返回原字符串的数组
-// 若以 &quot;&quot;/'' 来作为分隔符可能会破坏 unicode 安全
+// 若以 &quot;&quot;/&#39;&#39; 来作为分隔符可能会破坏 unicode 安全
 // 例:
-// const a = '𝟘𝟙𝟚𝟛'.split('');
+// const a = &#39;𝟘𝟙𝟚𝟛&#39;.split(&#39;&#39;);
 // console.log(a);
 // Output: [&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;]
 // 这时候推荐使用es6的拓展运算符 &quot;...&quot; 来解决
 // 例:
-// const a = '𝟘𝟙𝟚𝟛'
+// const a = &#39;𝟘𝟙𝟚𝟛&#39;
 // console.log([...a])
-// Output: ['𝟘', '𝟙', '𝟚', '𝟛']
+// Output: [&#39;𝟘&#39;, &#39;𝟙&#39;, &#39;𝟚&#39;, &#39;𝟛&#39;]
 </code></pre>
-<h2 id="trim">trim()</h2>
-<pre><code class="language-js">String.trim();
+<h2 id="trim"><a href="#trim" class="headerlink" title="trim()"></a>trim()</h2><pre><code class="lang-js">String.trim();
 //去除字符串两端空白
 //该方法返回一个新的去除字符串两端空白的新字符串,并不影响原字符串本身
 </code></pre>
-<h2 id="replace">replace()</h2>
-<pre><code class="language-js">String.replace(regexp|subStr , newSubStr|function)
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h2><pre><code class="lang-js">String.replace(regexp|subStr , newSubStr|function)
 // 将字符串中某个字符串/字符(subStr),替换成新字符(newSubStr)
 // 若是是一个function,则newSubStr为function的返回值
 // 第一个参数是subStr则只有第一个匹配项会被替换
 // 若第一个参数是正则表达式则正则所匹配到的对象会被替换
 </code></pre>
-<h1 id="cao-zuo-shu-zu-de-fang-fa">操作数组的方法</h1>
-<p>数组的扁平化</p>
-<pre><code class="language-js">Array.flat();
+<h1 id="操作数组的方法"><a href="#操作数组的方法" class="headerlink" title="操作数组的方法"></a>操作数组的方法</h1><p>数组的扁平化</p>
+<pre><code class="lang-js">Array.flat();
 Array.toString().split();
 </code></pre>
-<h2 id="bu-hui-gai-bian-yuan-shi-shu-zu-de-fang-fa">不会改变原始数组的方法</h2>
-<h3 id="index-of-1">indexOf()</h3>
-<pre><code class="language-js">Array.indexOf(searchElement, [fromIndex]);
+<h2 id="不会改变原始数组的方法"><a href="#不会改变原始数组的方法" class="headerlink" title="不会改变原始数组的方法"></a>不会改变原始数组的方法</h2><h3 id="indexOf-1"><a href="#indexOf-1" class="headerlink" title="indexOf()"></a>indexOf()</h3><pre><code class="lang-js">Array.indexOf(searchElement, [fromIndex]);
 // 查找某一个值在数组中首次出现的位置
 // fromIndex 参数若大于 Array.length 则默认不会从数组中查找,返回 -1
 // 若小于 0 则其默认为数组长度的抵消值,若抵消值仍为负数则默认为 0
 // 即若数组长度为6 fromIndex值为 -1 则意味着从索引为 6+(-1) 开始查找
 </code></pre>
-<h3 id="slice-1">slice()</h3>
-<pre><code class="language-js">Array.slice(begin, [end]);
+<h3 id="slice-1"><a href="#slice-1" class="headerlink" title="slice()"></a>slice()</h3><pre><code class="lang-js">Array.slice(begin, [end]);
 // 返回数组的某一部分(浅拷贝)
 // 提取从原数组中从索引 begin 到 end 中的元素
 // 若参数为负,则其值默认为 array.length + 参数值
 // 若 |begin| &gt; |end| 则会返回一个空数组,不会将end和begin交换
 </code></pre>
-<h3 id="concat-1">concat()</h3>
-<pre><code class="language-js">Array.concat(value1, [...valueN]);
+<h3 id="concat-1"><a href="#concat-1" class="headerlink" title="concat()"></a>concat()</h3><pre><code class="lang-js">Array.concat(value1, [...valueN]);
 // 将原数组进行浅拷贝的副本与参数中的数组/单个元素进行合并,返回合并后的副本
 </code></pre>
-<h3 id="join">join()</h3>
-<pre><code class="language-js">Array.join([separator]);
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><pre><code class="lang-js">Array.join([separator]);
 // 将数组中的元素拼接起来后返回一个总的字符串
 // 可选参数separator 是指定每个元素之间的分隔符
 // 如果缺省参数 separator 则每个元素之间默认分隔符为&quot;,&quot;
 // 如果参数是空字符串(&quot;&quot;)则每个元素之间没有任何字符
 // 若数组中的某一个元素为 undefined 或 null ,则返回的字符串为空字符串
 </code></pre>
-<h3 id="filter">filter()</h3>
-<pre><code class="language-js">Array.fliter(callbackFunction(element, [index]));
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><pre><code class="lang-js">Array.fliter(callbackFunction(element, [index]));
 // 创建一个新数组，其包含通过所提供函数实现的测试的所有元素
 // callbackFunction为测试数组每个元素的函数 返回true则表示该元素通过测试,保留该元素,反之则返回false,不保留该元素
 // callbackFunction中的 element参数则是当前测试的元素 index是正在测试中的元素在原数组中的索引
 </code></pre>
-<h3 id="reduce">reduce()</h3>
-<pre><code class="language-js">Array.reduce(reducer, [initiaValue]);
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h3><pre><code class="lang-js">Array.reduce(reducer, [initiaValue]);
 // 方法对数组中的每个元素按序执行一个由您提供的 reducer 函数，每一次运行 reducer 会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
 //reducer = function(previousValue,currentValue,[currentIndex])&#123;&#125;
 // previousValue 为 上次调用reducer返回的的值
@@ -811,31 +764,25 @@ Array.toString().split();
 // currentIndex 为 数组中正在处理的元素在数组中的索引值
 // 作为第一次调用 reducer 函数时参数 previousValue 的值。若指定了初始值 initialValue，则 currentValue 则将使用数组第一个元素；否则 previousValue 将使用数组第一个元素，而 currentValue 将使用数组第二个元素
 </code></pre>
-<h3 id="map">map()</h3>
-<pre><code class="language-js">Array.map(callbackFunction, [thisArg]);
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><pre><code class="lang-js">Array.map(callbackFunction, [thisArg]);
 // callbackFunction(currentValue,[index]) 为数组每一个元素执行该函数 并返回一个由原数组每个元素执行回调函数的结果组成的新数组
 // currentValue为当前所处理的元素
 // index 为当前所处理元素在数组中的索引值
 // thisArg 为当执行回调函数 callbackFunction时，用作 this 的值。
 </code></pre>
-<h2 id="hui-gai-bian-yuan-shi-shu-zu-de-fang-fa">会改变原始数组的方法</h2>
-<h3 id="push">push()</h3>
-<pre><code class="language-js">Array.push(element1, ..., elementN)
+<h2 id="会改变原始数组的方法"><a href="#会改变原始数组的方法" class="headerlink" title="会改变原始数组的方法"></a>会改变原始数组的方法</h2><h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><pre><code class="lang-js">Array.push(element1, ..., elementN)
 // 将元素添加到数组末尾
 // 调用该方法时的返回值为新数组的length
 </code></pre>
-<h3 id="pop">pop()</h3>
-<pre><code class="language-js">Array.pop();
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><pre><code class="lang-js">Array.pop();
 // 从数组中删除最后一个元素 并返回被删除的元素
 // 在空数组中调用pop(),将返回undefined
 </code></pre>
-<h3 id="shift">shift()</h3>
-<pre><code class="language-js">Array.shift();
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h3><pre><code class="lang-js">Array.shift();
 // 从数组中删除索引为0的元素 并返回被删除的元素
 // 在空数组中调用shift(),将返回undefined
 </code></pre>
-<h3 id="unshift">unshift()</h3>
-<pre><code class="language-js">Array.unshift(element1, [...elementN]);
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a>unshift()</h3><pre><code class="lang-js">Array.unshift(element1, [...elementN]);
 // 将一个或多个元素添加到数组开头,并返回该数组的新length
 // 当传入参数为多个值时,它们将被以 块 的形式被插入到对象开始位置,他们的顺序和被传入时的顺序一致,所以，传入多个参数调用一次 unshift()，和传入一个参数调用多次 unshift()（例如，循环调用），它们将得到不同的结果。例如：
 let arr = [4, 5, 6];
@@ -853,8 +800,7 @@ arr.unshift(3);
 console.log(arr);
 // [3, 2, 1, 4, 5, 6]
 </code></pre>
-<h3 id="sort">sort()</h3>
-<pre><code class="language-js">Array.sort([compareFunction(a, b)]);
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><pre><code class="lang-js">Array.sort([compareFunction(a, b)]);
 // 将数组按照某一规则来进行排序,返回排序后的数组
 // 若不指定规则则默认将数组中的元素转换为字符串的逐个字符的unicode位点进行排序
 // 若指定compareFunction(a,b) 那么数组会按照调用该函数返回值进行排序
@@ -862,8 +808,7 @@ console.log(arr);
 // 如果compareFunction(a,b) 小于 0 那么a会排列到b之前
 // 如果compareFunction(a,b) 等于 0 那么a与b的相对位置不变
 </code></pre>
-<h3 id="splice">splice()</h3>
-<pre><code class="language-js">Array.splice(start, [deleteCount, [item1, ...itemN]]);
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><pre><code class="lang-js">Array.splice(start, [deleteCount, [item1, ...itemN]]);
 // 删除或替换或添加元素来修改数组,并以数组的方式返回被删除元素所组成的数组
 // 从指定修改从 start 索引开始修改
 // 若 start 的值大于Array.length则意味着从数组末尾开始修改
@@ -872,16 +817,13 @@ console.log(arr);
 // deleteCount为删除元素的个数
 // item1-itemN为需要添加进数组的元素
 </code></pre>
-<h3 id="for-each">forEach()</h3>
-<pre><code class="language-js">Array.forEach(callbackFucntion);
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><pre><code class="lang-js">Array.forEach(callbackFucntion);
 // callbackFunction(currentValue,[index],[thisArg]) 为数组每一个元素执行该函数
 // currentValue为当前所处理的元素
 // index 为当前所处理元素在数组中的索引值
 // thisArg 为当执行回调函数 callbackFunction时，用作 this 的值。
 </code></pre>
-<h1 id="es-6-xin-te-xing">ES6 新特性</h1>
-<h2 id="set-dui-xiang">Set()对象</h2>
-<pre><code class="language-js">// Set 对象允许储存任何类型的唯一值,无论是原始值或是对象引用
+<h1 id="ES6-新特性"><a href="#ES6-新特性" class="headerlink" title="ES6 新特性"></a>ES6 新特性</h1><h2 id="Set-对象"><a href="#Set-对象" class="headerlink" title="Set()对象"></a>Set()对象</h2><pre><code class="lang-js">// Set 对象允许储存任何类型的唯一值,无论是原始值或是对象引用
 const newSet = new Set();
 // Set的一些实例方法
 Set.size(); // 返回Set对象中值的个数
@@ -897,7 +839,7 @@ const arrSet = new Set(arr);
 return [...arrSet];
 
 // 利用Set将字符串转为数组
-const str = 'hello';
+const str = &#39;hello&#39;;
 const newSet = new Set(str);
 return [...newSet];
 
@@ -911,17 +853,14 @@ const arr1 = [1, 2, 3, 4];
 const arr2 = [3, 4, 5, 6];
 const newSet = new Set([...arr1].fliter((e) =&gt; arr2.has(e)));
 </code></pre>
-<h2 id="symbol">Symbol()</h2>
-<pre><code class="language-js">//symbol 是一种基本数据类型（primitive data type）。Symbol() 函数会返回 symbol 类型的值
+<h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol()"></a>Symbol()</h2><pre><code class="lang-js">//symbol 是一种基本数据类型（primitive data type）。Symbol() 函数会返回 symbol 类型的值
 // 每个从Symbol()方法返回的值都是唯一的
 // 但是Symbol 不支持 new Symbol() 构造
 </code></pre>
-<h2 id="map-dui-xiang">Map()对象</h2>
-<pre><code class="language-js">// Map 对象保存键值对，并且能够记住键的原始插入顺序。任何值（对象或者基本类型）都可以作为一个键或一个值。
+<h2 id="Map-对象"><a href="#Map-对象" class="headerlink" title="Map()对象"></a>Map()对象</h2><pre><code class="lang-js">// Map 对象保存键值对，并且能够记住键的原始插入顺序。任何值（对象或者基本类型）都可以作为一个键或一个值。
 const newMap = new Map();
 </code></pre>
-<h2 id="es-6-de-sheng-yu-can-shu">es6 的剩余参数</h2>
-<pre><code class="language-js">// rest parameters
+<h2 id="es6-的剩余参数"><a href="#es6-的剩余参数" class="headerlink" title="es6 的剩余参数"></a>es6 的剩余参数</h2><pre><code class="lang-js">// rest parameters
 function foo(...nums) &#123;
   //nums是形参名  =&gt; var nums = [  ]
 &#125;
@@ -930,8 +869,7 @@ foo(10);
 foo(10, 20, 30);
 foo(10, 20, 30, 40);
 </code></pre>
-<h2 id="es-6-zhan-kai-yun-suan-fu">Es6 展开运算符</h2>
-<pre><code class="language-js">var nums = ['abc', 'cba', 'bac'];
+<h2 id="Es6-展开运算符"><a href="#Es6-展开运算符" class="headerlink" title="Es6 展开运算符"></a>Es6 展开运算符</h2><pre><code class="lang-js">var nums = [&#39;abc&#39;, &#39;cba&#39;, &#39;bac&#39;];
 foo(...nums);
 </code></pre>
 
@@ -986,9 +924,9 @@ foo(...nums);
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">8 <p>Articles</p></a></li>
-                    <li><a href="/categories">9 <p>Categories</p></a></li>
-                    <li><a href="/tags">8 <p>Tags</p></a></li>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">10 <p>Categories</p></a></li>
+                    <li><a href="/tags">9 <p>Tags</p></a></li>
                 </ul>
             </div>
             
@@ -997,7 +935,7 @@ foo(...nums);
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#xiao-zhi-shi"><span class="toc-number">1.</span> <span class="toc-text">小知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#liu-lan-qi-de-xuan-ran-guo-cheng"><span class="toc-number">2.</span> <span class="toc-text">浏览器的渲染过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-yin-qing"><span class="toc-number">3.</span> <span class="toc-text">Js 引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#v-8-yin-qing"><span class="toc-number">3.1.</span> <span class="toc-text">V8 引擎</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-de-nei-cun-guan-li-he-bi-bao"><span class="toc-number">4.</span> <span class="toc-text">js 的内存管理和闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#js-de-la-ji-hui-shou-gc"><span class="toc-number">4.1.</span> <span class="toc-text">js 的垃圾回收(GC)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bi-bao"><span class="toc-number">4.2.</span> <span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bi-bao-de-nei-cun-xie-lu"><span class="toc-number">4.2.1.</span> <span class="toc-text">闭包的内存泄露</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#han-shu-zhong-de-this-zhi-xiang"><span class="toc-number">5.</span> <span class="toc-text">函数中的 this 指向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mo-ren-bang-ding"><span class="toc-number">5.1.</span> <span class="toc-text">默认绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jian-jie-han-shu-yin-yong"><span class="toc-number">5.2.</span> <span class="toc-text">间接函数引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yin-shi-bang-ding"><span class="toc-number">5.3.</span> <span class="toc-text">隐式绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xian-shi-bang-ding"><span class="toc-number">5.4.</span> <span class="toc-text">显式绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-bang-ding"><span class="toc-number">5.5.</span> <span class="toc-text">new 绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jian-tou-han-shu"><span class="toc-number">5.6.</span> <span class="toc-text">箭头函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#han-shu-shi-bian-cheng"><span class="toc-number">6.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#chun-han-shu"><span class="toc-number">6.1.</span> <span class="toc-text">纯函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ke-li-hua"><span class="toc-number">6.2.</span> <span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zu-he-han-shu-shou-xie"><span class="toc-number">6.3.</span> <span class="toc-text">组合函数(手写)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#yan-ge-mo-shi"><span class="toc-number">7.</span> <span class="toc-text">严格模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-de-mian-xiang-dui-xiang"><span class="toc-number">8.</span> <span class="toc-text">JS 的面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gong-han-mo-shi"><span class="toc-number">8.1.</span> <span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gou-zao-han-shu"><span class="toc-number">8.2.</span> <span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ji-cheng-yu-yuan-xing-lian"><span class="toc-number">9.</span> <span class="toc-text">继承与原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yuan-xing-lian"><span class="toc-number">9.1.</span> <span class="toc-text">原型链</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cao-zuo-zi-fu-chuan-de-fang-fa"><span class="toc-number">10.</span> <span class="toc-text">操作字符串的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#index-of"><span class="toc-number">10.1.</span> <span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#char-at"><span class="toc-number">10.2.</span> <span class="toc-text">charAt()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touppercase"><span class="toc-number">10.3.</span> <span class="toc-text">touppercase()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#concat"><span class="toc-number">10.4.</span> <span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice"><span class="toc-number">10.5.</span> <span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sub-string"><span class="toc-number">10.6.</span> <span class="toc-text">subString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sub-str"><span class="toc-number">10.7.</span> <span class="toc-text">subStr()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split"><span class="toc-number">10.8.</span> <span class="toc-text">split()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trim"><span class="toc-number">10.9.</span> <span class="toc-text">trim()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">10.10.</span> <span class="toc-text">replace()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cao-zuo-shu-zu-de-fang-fa"><span class="toc-number">11.</span> <span class="toc-text">操作数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bu-hui-gai-bian-yuan-shi-shu-zu-de-fang-fa"><span class="toc-number">11.1.</span> <span class="toc-text">不会改变原始数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#index-of-1"><span class="toc-number">11.1.1.</span> <span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice-1"><span class="toc-number">11.1.2.</span> <span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-1"><span class="toc-number">11.1.3.</span> <span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-number">11.1.4.</span> <span class="toc-text">join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-number">11.1.5.</span> <span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-number">11.1.6.</span> <span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-number">11.1.7.</span> <span class="toc-text">map()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hui-gai-bian-yuan-shi-shu-zu-de-fang-fa"><span class="toc-number">11.2.</span> <span class="toc-text">会改变原始数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push"><span class="toc-number">11.2.1.</span> <span class="toc-text">push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop"><span class="toc-number">11.2.2.</span> <span class="toc-text">pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift"><span class="toc-number">11.2.3.</span> <span class="toc-text">shift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift"><span class="toc-number">11.2.4.</span> <span class="toc-text">unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-number">11.2.5.</span> <span class="toc-text">sort()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-number">11.2.6.</span> <span class="toc-text">splice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-each"><span class="toc-number">11.2.7.</span> <span class="toc-text">forEach()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#es-6-xin-te-xing"><span class="toc-number">12.</span> <span class="toc-text">ES6 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set-dui-xiang"><span class="toc-number">12.1.</span> <span class="toc-text">Set()对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol"><span class="toc-number">12.2.</span> <span class="toc-text">Symbol()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-dui-xiang"><span class="toc-number">12.3.</span> <span class="toc-text">Map()对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es-6-de-sheng-yu-can-shu"><span class="toc-number">12.4.</span> <span class="toc-text">es6 的剩余参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es-6-zhan-kai-yun-suan-fu"><span class="toc-number">12.5.</span> <span class="toc-text">Es6 展开运算符</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">小知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">浏览器的渲染过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Js-%E5%BC%95%E6%93%8E"><span class="toc-number">3.</span> <span class="toc-text">Js 引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#V8-%E5%BC%95%E6%93%8E"><span class="toc-number">3.1.</span> <span class="toc-text">V8 引擎</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%92%8C%E9%97%AD%E5%8C%85"><span class="toc-number">4.</span> <span class="toc-text">js 的内存管理和闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#js-%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6-GC"><span class="toc-number">4.1.</span> <span class="toc-text">js 的垃圾回收(GC)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">4.2.</span> <span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="toc-number">4.2.1.</span> <span class="toc-text">闭包的内存泄露</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84-this-%E6%8C%87%E5%90%91"><span class="toc-number">5.</span> <span class="toc-text">函数中的 this 指向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%BB%91%E5%AE%9A"><span class="toc-number">5.1.</span> <span class="toc-text">默认绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%B4%E6%8E%A5%E5%87%BD%E6%95%B0%E5%BC%95%E7%94%A8"><span class="toc-number">5.2.</span> <span class="toc-text">间接函数引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E7%BB%91%E5%AE%9A"><span class="toc-number">5.3.</span> <span class="toc-text">隐式绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E7%BB%91%E5%AE%9A"><span class="toc-number">5.4.</span> <span class="toc-text">显式绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-%E7%BB%91%E5%AE%9A"><span class="toc-number">5.5.</span> <span class="toc-text">new 绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">5.6.</span> <span class="toc-text">箭头函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-number">6.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%AF%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">纯函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%AF%E9%87%8C%E5%8C%96"><span class="toc-number">6.2.</span> <span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%87%BD%E6%95%B0-%E6%89%8B%E5%86%99"><span class="toc-number">6.3.</span> <span class="toc-text">组合函数(手写)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">严格模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JS-%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">8.</span> <span class="toc-text">JS 的面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-number">8.1.</span> <span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">8.2.</span> <span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">9.</span> <span class="toc-text">继承与原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">9.1.</span> <span class="toc-text">原型链</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">操作字符串的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#indexOf"><span class="toc-number">10.1.</span> <span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#charAt"><span class="toc-number">10.2.</span> <span class="toc-text">charAt()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touppercase"><span class="toc-number">10.3.</span> <span class="toc-text">touppercase()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#concat"><span class="toc-number">10.4.</span> <span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice"><span class="toc-number">10.5.</span> <span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#subString"><span class="toc-number">10.6.</span> <span class="toc-text">subString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#subStr"><span class="toc-number">10.7.</span> <span class="toc-text">subStr()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split"><span class="toc-number">10.8.</span> <span class="toc-text">split()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trim"><span class="toc-number">10.9.</span> <span class="toc-text">trim()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">10.10.</span> <span class="toc-text">replace()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">11.</span> <span class="toc-text">操作数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%BC%9A%E6%94%B9%E5%8F%98%E5%8E%9F%E5%A7%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">11.1.</span> <span class="toc-text">不会改变原始数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#indexOf-1"><span class="toc-number">11.1.1.</span> <span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice-1"><span class="toc-number">11.1.2.</span> <span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-1"><span class="toc-number">11.1.3.</span> <span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-number">11.1.4.</span> <span class="toc-text">join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-number">11.1.5.</span> <span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-number">11.1.6.</span> <span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-number">11.1.7.</span> <span class="toc-text">map()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%9A%E6%94%B9%E5%8F%98%E5%8E%9F%E5%A7%8B%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">11.2.</span> <span class="toc-text">会改变原始数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push"><span class="toc-number">11.2.1.</span> <span class="toc-text">push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop"><span class="toc-number">11.2.2.</span> <span class="toc-text">pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift"><span class="toc-number">11.2.3.</span> <span class="toc-text">shift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift"><span class="toc-number">11.2.4.</span> <span class="toc-text">unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-number">11.2.5.</span> <span class="toc-text">sort()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-number">11.2.6.</span> <span class="toc-text">splice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">11.2.7.</span> <span class="toc-text">forEach()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">12.</span> <span class="toc-text">ES6 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Set-%E5%AF%B9%E8%B1%A1"><span class="toc-number">12.1.</span> <span class="toc-text">Set()对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol"><span class="toc-number">12.2.</span> <span class="toc-text">Symbol()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-%E5%AF%B9%E8%B1%A1"><span class="toc-number">12.3.</span> <span class="toc-text">Map()对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E7%9A%84%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0"><span class="toc-number">12.4.</span> <span class="toc-text">es6 的剩余参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Es6-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">12.5.</span> <span class="toc-text">Es6 展开运算符</span></a></li></ol></li></ol>
                 </div>
             </div>
             

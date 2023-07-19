@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Tag: js - 刘三刀的blog</title>
+    <title>事件处理程序的相关优化 - 刘三刀的blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
@@ -17,7 +17,12 @@
     <meta name="google" content="notranslate" />
     
     <meta name="keywords" content="刘三刀的blog," />
-      
+     
+    <meta name="description" content="事件流机制
+向水里扔一个西瓜，
+首先它会有一个下降的过程，这个过程可以理解为从最顶层元素向事件发生的具体元素（目标点）的捕获过程
+之后会产生泡泡，会在最低点（具体元素）之后漂浮到水面上，这个过程相当," />
+     
     <meta name="author" content="ND_LJQ" />
      
     <link
@@ -78,132 +83,78 @@
     </div>
     <span id="config-title" style="display:none">刘三刀的blog</span>
     <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="🗂️分类" external="false">🗂️分类</a>
-        </li>
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="🏷️标签" external="false">🏷️标签</a>
-        </li>
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="🕜️时间轴" external="false">🕜️时间轴</a>
-        </li>
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/whoami/" title="🤔关于我" external="false">🤔关于我</a>
-        </li>
-        
-    </ul>
-    <p class="copyright" id="copyright">
-        &copy; 2023 ND_LJQ.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-    </p>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://nd-ljq.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">事件处理程序的相关优化</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="container">
-    
-<div class="search-box">
-    <form class="site-search-form">
-        <span class="iconfont icon-search"></span>
-        <input type="text" id="local-search-input" class="st-search-input" />
-        <div class="iconfont icon-cross search-box-close"></div>
-    </form>
-    <div class="search-scrollable">
-        <div id="local-search-result" class="local-search-result-cls" data-initialise="Initialising search index..."
-            data-start="Please input search keywords." data-empty="No result found, please try other keywords.">
-            <span>Please input search keywords.</span>
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/前端"><b>「
+                    </b>前端<b> 」</b></a>
+                
+                July 19, 2023
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/07/19/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BC%98%E5%8C%96/" title="事件处理程序的相关优化" class="">事件处理程序的相关优化</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    1.9k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    2 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E4%B8%9A%E5%8A%A1%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%89%8D%E7%AB%AF/" rel="tag">业务与性能优化(前端)</a></li></ul>
+            
         </div>
     </div>
-</div>
-<div id="header">
-    <div>
-        <div class="logo animated fadeInDown">
-            <img src="/img/favicon.png" alt="">
-            <a class="image-logo" href="/"></a>
-        </div>
-        <ul id="menu-menu" class="menu text-menu">
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="🗂️分类" external="false" class="menu-link">🗂️分类</a>
-            </li>
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/tags/" title="🏷️标签" external="false" class="menu-link">🏷️标签</a>
-            </li>
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/archives/" title="🕜️时间轴" external="false" class="menu-link">🕜️时间轴</a>
-            </li>
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/whoami/" title="🤔关于我" external="false" class="menu-link">🤔关于我</a>
-            </li>
-            
-            
-            <li class="animated fadeInDown search-bar iconfont icon-search"></li>
-            
-        </ul>
-        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
-    </div>
-</div>
-<div id="screen">
-    <div id="mark">
-        <div class="cover animated fadeIn" style="
-            animation-delay: 900ms;
-            animation-duration: 2.8s;
-            background-image:
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(/img/cover.jpg);">
-        </div>
-    </div>
-    
-    <div id="post0" class="else">
-        <p class="animated fadeInDown">
-            
-            <a href="/categories/前端"><b>「
-                </b>前端<b> 」</b></a>
-            
-            July 19, 2023
-        </p>
-        <h3 class="post-title animated fadeInDown">
-            <a href="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="js学习笔记" class="posttitle">js学习笔记</a></h3>
-        
-        <p class="post-count animated fadeInDown">
-            
-            <span>
-                <b class="iconfont icon-text2"></b> <i>Words count</i>
-                25k
-            </span>
-            
-            
-            <span>
-                <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                22 mins.
-            </span>
-            
-            
-        </p>
-        
-        
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
-        
-        <div class="md-content animated fadeIn">
-            
-            <h1 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h1><p>浏览器内核</p>
-<p>Webkit 苹果开发 用于 Safari</p>
-<p>Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Opera 等浏览器</p>
-<h1 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的...</h1>
-            
-            <span class="read-more"><a href="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Read article" class="posttitle">Read article</a>
-                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-    
 </div>
 
 <div class="screen-gradient-after">
@@ -211,21 +162,147 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    <span class="typed-text"></span>
+                    <span class="animated fadeIn delay-1s"></span>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-    <div id="primary">
-        
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="shi-jian-liu-ji-zhi">事件流机制</h1>
+<p>向水里扔一个西瓜，</p>
+<p>首先它会有一个下降的过程，这个过程可以理解为从最顶层元素向事件发生的具体元素（目标点）的捕获过程</p>
+<p>之后会产生泡泡，会在最低点（具体元素）之后漂浮到水面上，这个过程相当于事件冒泡</p>
+<p><img src="images/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BC%98%E5%8C%96/90c6d0e2180f4ed28f1137c32b955995tplv-k3u1fbpfcp-zoom-in-crop-mark_1512_0_0_0-1689775169899-1.webp" alt></p>
+<h1 id="shi-jian-chu-li-cheng-xu">事件处理程序</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>事件委托原理</p>
+<p>利用事件冒泡，只使用一个事件处理程序来管理一系列的类型事件</p>
+<p>也就是说给所有目标元素的共同祖先节点添加一个事件处理程序即可</p>
+<p><code>这样可以减少大量的内存消耗，提升性能</code></p>
+</li>
+<li class="lvl-2">
+<p>性能解析</p>
+<p>页面中事件处理程序的数量与页面的整体性能直接相关</p>
+<p>每个函数都是对象，都占用内存空间，对象越多，性能越差</p>
+<p>事件处理程序所需访问的 <code>DOM</code> 次数会影响整个页面的就绪时间，导致页面响应缓慢</p>
+</li>
+<li class="lvl-2">
+<p>事件对象</p>
+<pre><code class="language-JS">event.target  // 触发事件的目标元素
+event.currentTarget  // 绑定事件的元素
+event.stopPropagation()  // 阻止事件冒泡
+event.preventDefault()  // 阻止元素的默认事件
+</code></pre>
+</li>
+</ul>
+<h1 id="hua-ru-hua-chu-shi-jian">划入划出事件</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>mouseover 和 mouseout</p>
+<p>在鼠标指针从父元素移动到子元素时，会先触发父元素的 <code>mouseout</code> 事件，再触发子元素的 <code>mouseover</code> 事件；在鼠标指针从子元素移回父元素时，会先触发子元素的 <code>mouseout</code> 事件，再触发父元素的 <code>mouseover</code> 事件。这种行为被称为事件冒泡或捕获机制。</p>
+<pre><code class="language-html">&lt;div id=&quot;box&quot;&gt;
+  &lt;button type=&quot;button&quot;&gt;按钮&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.box &#123;
+  width: 200px;
+  height: 80px;
+  background-color: #0f0;
+&#125;
+</code></pre>
+<pre><code class="language-js">const box = document.querySelector('#box')
+box.addEventListener('mouseover', () =&gt; &#123;
+  console.log('移动到自身和其子元素身上都会触发事件')
+&#125;)
+</code></pre>
+</li>
+<li class="lvl-2">
+<p>mouseenter 和 mouseleave</p>
+<pre><code class="language-js">box.addEventListener('mouseenter', () =&gt; &#123;
+  console.log('只移动到自身触发事件')
+&#125;)
+</code></pre>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='7bbd114371cb2cd73dc2'
+        data-cs='fd7cda0eb23cbb69b65e291c5b607b196613a6b1'
+        data-r='nd-ljq.github.io'
+        data-o='ND-LJQ'
+        data-a='ND-LJQ'
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/head.jpg" height=300 width=300></img>
+                    <p>ND_LJQ</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                                <dd><a href="https://github.com/ND-LJQ'" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">10 <p>Categories</p></a></li>
+                    <li><a href="/tags">9 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#shi-jian-liu-ji-zhi"><span class="toc-number">1.</span> <span class="toc-text">事件流机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shi-jian-chu-li-cheng-xu"><span class="toc-number">2.</span> <span class="toc-text">事件处理程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hua-ru-hua-chu-shi-jian"><span class="toc-number">3.</span> <span class="toc-text">划入划出事件</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
     </div>
-    
 </div>
-<div id="preview"></div>
 
-
+    </div>
+</div>
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
         <span class="percentage animated fadeIn faster">0%</span>

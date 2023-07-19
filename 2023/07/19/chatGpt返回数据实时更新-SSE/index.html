@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>chatGpt返回数据实时更新(SSE) - 刘三刀的blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="刘三刀的blog," />
+     
+    <meta name="description" content="服务器发送事件（Server-Sent Events，简称 SSE） 其实就是浏览器向服务器发送一个 HTTP 请求，然后服务器不断单向地向浏览器推送消息
+所谓的消息，其实就是一定格式的文本事件流（," />
+     
+    <meta name="author" content="ND_LJQ" />
+     
+    <link
+      rel="alternative"
+      href="atom.xml"
+      title="刘三刀的blog"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/img/favicon.png" />
+     
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+ 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+ 
+<link rel="stylesheet" href="/css/obsidian.css">
+ 
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+ 
+    <link
+      href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      var musiclist = '';
+    </script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+ 
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+ 
+  <meta name="generator" content="Hexo 6.3.0"></head>
+</html>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">刘三刀的blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://nd-ljq.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">chatGpt返回数据实时更新(SSE)</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/前端"><b>「
+                    </b>前端<b> 」</b></a>
+                
+                July 19, 2023
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/07/19/chatGpt%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0-SSE/" title="chatGpt返回数据实时更新(SSE)" class="">chatGpt返回数据实时更新(SSE)</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    5.7k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    5 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E4%B8%9A%E5%8A%A1%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%89%8D%E7%AB%AF/" rel="tag">业务与性能优化(前端)</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p><strong>服务器发送事件（Server-Sent Events，简称 SSE）</strong> 其实就是浏览器向服务器发送一个 <code>HTTP</code> 请求，然后服务器不断单向地向浏览器推送消息</p>
+<p>所谓的消息，其实就是一定格式的文本事件流（数据流）</p>
+<p><img src="/2023/07/19/chatGpt%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0-SSE/v2-471e38eb6ef654800d28c7d623dd22a8_720w.png" alt></p>
+<h1 id="sse-de-te-dian">SSE的特点</h1>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>基于 <code>http</code> 协议的单向通信</p>
+</li>
+<li class="lvl-4">
+<p>默认支持断线重连，并支持发送自定义事件类型消息</p>
+</li>
+<li class="lvl-4">
+<p>只支持发送文本</p>
+</li>
+<li class="lvl-4">
+<p>是 <code>WebSocket</code> 的一种轻型替代方案，受同源策略的限制</p>
+</li>
+<li class="lvl-4">
+<p>前端: 不使用<code>xhr/fetch</code>,而使用特定的API : <code>EventSource</code></p>
+</li>
+<li class="lvl-4">
+<p>后端: <code>Content-Type: text/event-stream</code></p>
+</li>
+</ul>
+<h1 id="xiao-xi-de-gou-cheng">消息的构成</h1>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>消息唯一标识（id）</p>
+<p>相当于每一条数据的编号，可通过 <code>lastEventId</code> 属性读取。一旦连接中断，浏览器会发送包含 <code>Last-Event-ID: id</code> 头信息来帮助服务器重建连接</p>
+</li>
+<li class="lvl-4">
+<p>消息内容（data）</p>
+<p>只能为文本字符串，发送 <code>JSON</code> 数据 <code>data:$&#123;JSON.stringify(&#123; name: 'adiu', alias: '老夫子' &#125;)&#125;\n\n</code></p>
+</li>
+<li class="lvl-4">
+<p>自定义事件类型（event）</p>
+<p>服务器端可自定义，浏览器端通过 <code>addEventListener</code> 监听，如果未指定，则触发浏览器端的 <code>message</code> 事件</p>
+</li>
+<li class="lvl-4">
+<p>最大间隔时间/毫秒（retry）</p>
+<p>如果未指定通信的最大间隔时间，服务器端 <code>3</code> 秒内没有发送任何信息，浏览器端默认开始重连</p>
+<p>由于网络错误导致连接出错，浏览器也会自动重新发起连接</p>
+</li>
+</ul>
+<h1 id="sse-he-socket-de-qu-bie">SSE和Socket的区别</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通信方式<br>
+SSE为单向通信,Socket为全双工、半双工通信</p>
+</li>
+<li class="lvl-2">
+<p>协议<br>
+SSE为http GET,Socket为ws</p>
+</li>
+<li class="lvl-2">
+<p>跨域<br>
+SSE不能跨域,Socket可以跨域</p>
+</li>
+</ul>
+<h1 id="ke-hu-duan-dai-ma">客户端代码</h1>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>检测浏览器是否支持</p>
+<pre><code class="language-js">if (!!window.EventSource) &#123;
+  console.log('当前浏览器支持事件推送')
+&#125;
+</code></pre>
+</li>
+<li class="lvl-4">
+<p>建立连接</p>
+<pre><code class="language-js">if (!!window.EventSource) &#123;
+  const ets = new EventSource('http://127.0.0.1/sse/notice')
+&#125;
+</code></pre>
+</li>
+<li class="lvl-4">
+<p>连接状态（ets.readyState）</p>
+<p><code>0</code> 表示连接还未建立，或者连接断线</p>
+<p><code>1</code> 表示连接已经建立，可以接受数据</p>
+<p><code>2</code> 表示连接已断，且不会重连</p>
+</li>
+<li class="lvl-4">
+<p>建立连接，触发事件</p>
+<pre><code class="language-js">ets.addEventListener('open', event =&gt; &#123;
+  console.log('handle open event')
+&#125;)
+</code></pre>
+<p>连接一旦建立，就会触发 <code>open</code> 事件</p>
+</li>
+<li class="lvl-4">
+<p>错误处理</p>
+<pre><code class="language-js">ets.addEventListener('error', event =&gt; &#123;
+  console.log('handle error event')
+&#125;)
+</code></pre>
+<p>如果发生通信错误（比如连接中断），就会触发 <code>error</code> 事件</p>
+</li>
+<li class="lvl-4">
+<p>自定义事件</p>
+<pre><code class="language-js">ets.addEventListener('notice', event =&gt; &#123;
+  const &#123; data, origin, lastEventId &#125; = event
+  console.log('消息内容', data)
+  console.log('服务器端URL的域名部分，即协议、域名和端口', origin)
+  console.log('数据的编号，由服务器端发送。如果没有编号，这个属性为空', lastEventId)
+&#125;)
+</code></pre>
+</li>
+<li class="lvl-4">
+<p>关闭推送</p>
+<pre><code class="language-js">ets.close()
+</code></pre>
+<p>默认情况下，如果客户端和服务端之间的连接关闭，则会自动重连。可以通过 <code>close()</code> 方法终止连接</p>
+</li>
+</ul>
+<p><strong>实战</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;chatgpt stream 响应数据SSE测试 demo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;button class=&quot;btn&quot;&gt;请求接口&lt;/button&gt;
+    &lt;div id=&quot;result&quot; style=&quot;word-wrap: break-word;&quot;&gt;&lt;/div&gt;
+    &lt;script type=&quot;module&quot;&gt;
+    let resultEl = document.querySelector('#result')
+    // SSE https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events/Using_server-sent_events#%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A5%E5%8F%97%E4%BA%8B%E4%BB%B6
+    // 前端 EventStream API 发起请求，后端 Koa，ctx.body 设置 stream 可写流，ctx.set 响应类型 text/event-stream。
+    document.querySelector(&quot;.btn&quot;).addEventListener(&quot;click&quot;, () =&gt; &#123;
+        const evtSource = new EventSource(&quot;/open-ai/sendMsg&quot;);
+        evtSource.onmessage = function (event) &#123;
+          console.log(&quot;message: &quot; + event.data);
+          resultEl.innerHTML += event.data;
+        &#125;;
+      &#125;);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="zhu-yi-shi-xiang">注意事项</h1>
+<ul class="lvl-0">
+<li class="lvl-4">
+<p>由于传输的数据格式必须是文本，所以每个字段之间要用换行符 <code>\n</code> 隔开，最后一个字段要用 <code>\n\n</code> 表示一条消息的结束</p>
+</li>
+<li class="lvl-4">
+<p>服务端发送数据时必须设置响应头标识推送的数据是流信息 <code>Content-Type: text/event-stream</code></p>
+</li>
+<li class="lvl-4">
+<p>不建议缓存事件推送数据</p>
+</li>
+<li class="lvl-4">
+<p>如果用户量很多，就需要保持很多长连接，因此会<strong>占用服务器大量内存和连接数</strong></p>
+</li>
+</ul>
+<p>若前端部署使用的是Nginx配置</p>
+<h1 id="nginx-pei-zhi-ruo-bu-jin-xing-pei-zhi-qian-duan-wu-fa-jie-shou">Nginx配置(若不进行配置,前端无法接收)</h1>
+<p><strong>这并不是最优解</strong></p>
+<pre><code class="language-json">server&#123;
+	listen 80;
+	server_name test.com;
+	location / &#123;
+		proxy_pass http://127.0.0.1:9000
+		#修复sse eventSource 无法接收到消息的问题
+		proxy_set_header Connection '';
+		proxy_http_version 1.1;
+		chunked_transfer_encoding off;
+		// 默认配置中proxy_buffering是on,SSE的实时性被打破了,有缓存,前端不会定时输出
+		proxy_buffering off;  
+		proxy_cache off;
+	&#125;
+&#125;
+</code></pre>
+<p><strong>最优解是后端返回的接口响应头中设置 <code>Cache-Control:no-cache</code></strong></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='7bbd114371cb2cd73dc2'
+        data-cs='fd7cda0eb23cbb69b65e291c5b607b196613a6b1'
+        data-r='nd-ljq.github.io'
+        data-o='ND-LJQ'
+        data-a='ND-LJQ'
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/head.jpg" height=300 width=300></img>
+                    <p>ND_LJQ</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                                <dd><a href="https://github.com/ND-LJQ'" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">19 <p>Articles</p></a></li>
+                    <li><a href="/categories">10 <p>Categories</p></a></li>
+                    <li><a href="/tags">9 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sse-de-te-dian"><span class="toc-number">1.</span> <span class="toc-text">SSE的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xiao-xi-de-gou-cheng"><span class="toc-number">2.</span> <span class="toc-text">消息的构成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sse-he-socket-de-qu-bie"><span class="toc-number">3.</span> <span class="toc-text">SSE和Socket的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ke-hu-duan-dai-ma"><span class="toc-number">4.</span> <span class="toc-text">客户端代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#zhu-yi-shi-xiang"><span class="toc-number">5.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx-pei-zhi-ruo-bu-jin-xing-pei-zhi-qian-duan-wu-fa-jie-shou"><span class="toc-number">6.</span> <span class="toc-text">Nginx配置(若不进行配置,前端无法接收)</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            ND_LJQ
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/sql/sql.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/java/java.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/c/c.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/html/html.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>
