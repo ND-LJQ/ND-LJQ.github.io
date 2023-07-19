@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>js学习笔记 - 刘三刀的blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="google" content="notranslate" />
+    
+    <meta name="keywords" content="刘三刀的blog," />
+     
+    <meta name="description" content="小知识
+浏览器内核
+Webkit 苹果开发 用于 Safari
+Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Opera 等浏览器
+浏览," />
+     
+    <meta name="author" content="ND_LJQ" />
+     
+    <link
+      rel="alternative"
+      href="atom.xml"
+      title="刘三刀的blog"
+      type="application/atom+xml"
+    />
+     
+    <link rel="icon" href="/img/favicon.png" />
+     
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+ 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+ 
+<link rel="stylesheet" href="/css/obsidian.css">
+ 
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+ 
+    <link
+      href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      var musiclist = '';
+    </script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+ 
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+ 
+  <meta name="generator" content="Hexo 6.3.0"></head>
+</html>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">刘三刀的blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://nd-ljq.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">js学习笔记</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/前端"><b>「
+                    </b>前端<b> 」</b></a>
+                
+                July 19, 2023
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="js学习笔记" class="">js学习笔记</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    22k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    20 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="xiao-zhi-shi">小知识</h1>
+<p>浏览器内核</p>
+<p>Webkit 苹果开发 用于 Safari</p>
+<p>Blink Webkit 的一个分支,Google 开发,目前应用于 Google Chrome,Edge,Opera 等浏览器</p>
+<h1 id="liu-lan-qi-de-xuan-ran-guo-cheng">浏览器的渲染过程</h1>
+<p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%94%A8%E6%88%B7%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E4%B8%AD%E8%BE%93%E5%85%A5url.svg" alt></p>
+<h1 id="js-yin-qing">Js 引擎</h1>
+<p><strong>js 引擎</strong>将 <strong>js 代码</strong>翻译成<strong>CPU 指令</strong>来执行</p>
+<h2 id="v-8-yin-qing">V8 引擎</h2>
+<p><img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/V8%E5%BC%95%E6%93%8E%E8%A7%A3%E6%9E%90js.png" alt></p>
+<p>1.js 引擎在解析成 AST 语法树中会在堆内存中默认创建一个全局对象 globalObject ,并将我们创建的属性名(值为 undefined)(普通变量)添加到 该全局对象中</p>
+<p>预解析时函数会在内存中创建一个储存空间(函数对象) (函数 的父级作用域在定义时就已经确定,不会因调用的位置而改变)</p>
+<pre><code class="language-js">解析时全局对象时(GO)
+会首先解析变量 后声明函数并赋值
+</code></pre>
+<pre><code>在预解析函数时(AO)
+首先形参和变量的声明
+然后实参赋值给形参
+最后声明函数并赋值
+</code></pre>
+<p><img src="images/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Snipaste_2022-09-02_16-30-06.png" alt></p>
+<p>然后在全局对象(GO)中则储存函数的地址</p>
+<pre><code class="language-js">GlobalObject:&#123;
+    name:undefined,
+    foo:0x...
+&#125;
+</code></pre>
+<p>2.运行代码时</p>
+<p>V8 引擎为了执行代码,其内部会有一个执行上下文栈(Execution Context Stack)(函数调用栈) 内放将要执行的函数</p>
+<p>全局代码执行顺序</p>
+<pre><code class="language-js">const name = 'ljq';
+const num1 = 2;
+const num2 = 5;
+const num3 = num1 + num2;
+</code></pre>
+<p>此时 V8 引擎创建了一个执行上下文栈 后创建一个全局执行上下文</p>
+<p>此时创建 GEC(全局执行上下文) ,其中的 VO 指向 解析时创建的 GO</p>
+<pre><code>在最新的规范中VO(variable Object)已经被更新为VE(VariableEnvironment)(变量环境)
+
+在执行代码中的变量和函数声明会作为环境记录(Environment Record) 添加到变量环境中,
+
+对于函数,其参数也会被作为环境记录被添加到变量环境中
+</code></pre>
+<p><img src="images/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Snipaste_2022-09-02_15-29-5.png" alt></p>
+<p>而函数则较为特殊</p>
+<p>全局函数的执行过程</p>
+<pre><code class="language-js">function foo(num) &#123;
+  var m = 10;
+  var n = 20;
+&#125;
+
+foo();
+</code></pre>
+<p>接着在执行上下文栈中创建一个函数执行上下文(FEC) (函数实例)</p>
+<p><img src="images/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Snipaste_2022-09-02_15-29-50.png" alt="Snipaste_2022-09-02_15-29-50"></p>
+<p>此时 AO(Actiction Object)为</p>
+<pre><code class="language-js">AO:&#123;
+    num:undefined,
+    m:undefined,
+    n:undefined
+&#125;
+</code></pre>
+<p>接着函数内的代码将会执行</p>
+<p>AO 中的属性被依次赋值</p>
+<p>当函数执行完后,函数执行上下文将会被弹出执行上下文栈(被销毁)</p>
+<p>面试题</p>
+<pre><code class="language-js">function foo() &#123;
+  m = 10;
+  // 没有使用变量关键字会被声明到全局对象中
+&#125;
+
+console.log(m); // 10
+</code></pre>
+<pre><code class="language-js">function foo() &#123;
+  var a = (b = 10);
+  // 此时这句语句在js引擎中会被转化为
+  // b = 10 ; var a = 10 (从右向左执行)
+&#125;
+
+console.log(a); // erro a is not defined
+console.log(b); // 10
+</code></pre>
+<h1 id="js-de-nei-cun-guan-li-he-bi-bao">js 的内存管理和闭包</h1>
+<p>对于基本数据类型内存的分配时会直接在栈空间内分配</p>
+<p>对于复杂数据类型内存的分配时会直接在堆空间内分配</p>
+<h2 id="js-de-la-ji-hui-shou-gc">js 的垃圾回收(GC)</h2>
+<p>常见的 GC 算法</p>
+<p>引用计数</p>
+<p>标记清除:</p>
+<p>设置一个根对象,垃圾回收器会定期从这个根开始找所有从根开始有引用到的对象,对于那些没有引用到的对象,就认为是不可用对象</p>
+<p>V8 GC 优化策略</p>
+<p>因为 js 在 gc 时会停止响应其他操作,所以要通过优化来避免长时间的停止响应</p>
+<p>1.分代回收</p>
+<pre><code class="language-js">通过区分&quot;临时&quot;和&quot;持久&quot;对象,多回收&quot;临时对象区&quot;,少回收&quot;持久对象区&quot;,减少每次需要的变量,减少每次GC耗时
+</code></pre>
+<p>2.增量 GC</p>
+<pre><code>就是每次处理一部分
+js运行 -&gt; gc运行js暂停 -&gt; js运行 -&gt; gc运行js暂停
+</code></pre>
+<h2 id="bi-bao">闭包</h2>
+<p>在计算机科学中</p>
+<pre><code>闭包在实现上是一个结构体,它储存了一个函数和其关联的环境
+闭包跟函数最大的区别就是,当捕捉闭包的时候,它的自由变量会在捕捉的时候就被确定,这样即使脱离了捕捉时的上下文,它也能照常运行
+</code></pre>
+<p>在 JavaScript 中</p>
+<pre><code class="language-js">一个函数和对其周围状态的引用绑定在一起 这就叫闭包
+</code></pre>
+<pre><code class="language-js">function foo() &#123;
+  var name = 'ljq';
+  function bar() &#123;
+    console.log('bar', name);
+  &#125;
+
+  return bar;
+&#125;
+
+var fn = foo();
+fn();
+</code></pre>
+<p>在 fn = foo() 被执行后 GO 中的 fn 值已经被赋值为了 bar() 的地址值</p>
+<p>foo 的 FEC 会被销毁 但是 bar 依旧能访问到 foo 中的 “name” 值</p>
+<p>此时 函数 bar()和 “name” 变量 构成一个闭包(函数和其能访问的外层作用域的自由变量共同组成闭包)</p>
+<h3 id="bi-bao-de-nei-cun-xie-lu">闭包的内存泄露</h3>
+<pre><code class="language-js">function foo() &#123;
+  var name = 'ljq';
+  function bar() &#123;
+    console.log('foo', name);
+  &#125;
+  return bar;
+&#125;
+
+var fn = foo();
+fn();
+</code></pre>
+<h1 id="han-shu-zhong-de-this-zhi-xiang">函数中的 this 指向</h1>
+<p>函数在执行时才会绑定 this</p>
+<p>在浏览器中 全局对象中 this 指向 window</p>
+<p>在 nodejs 中的 this 是一个空对象</p>
+<pre><code class="language-js">// this指向什么与函数所处位置无关
+// this的指向与函数被调用的方式有关
+
+function foo() &#123;
+  console.log(this);
+&#125;
+
+foo(); // window
+
+const obj = &#123;
+  name: 'ljq',
+  foo: foo,
+&#125;;
+
+console.log(obj.foo()); // obj对象
+
+console.log(foo.apply('abc')); // String:&#123;&quot;abc&quot;&#125;
+</code></pre>
+<p>优先级从上至下以此升高</p>
+<h2 id="mo-ren-bang-ding">默认绑定</h2>
+<pre><code class="language-js">// 函数调用的时无任何调用前缀 默认绑定时this指向全局对象window(非严格模式)
+function fn() &#123;
+  console.log(this); // window
+  let fn1 = function () &#123;
+    console.log(this); // window
+    fn2(); // window
+  &#125;;
+
+  function fn2() &#123;
+    console.log(this);
+  &#125;
+&#125;
+
+// 要注意的是在严格模式环境下 默认绑定的this指向undefined
+function fn() &#123;
+  console.log(this); // window
+&#125;
+
+('use strict');
+function fn1() &#123;
+  console.log(this); // undefined
+  console.log(this.name);
+&#125;
+
+var name = 'dnmd';
+fn1(); // TypeError: Cannot read property 'name' of undefined
+</code></pre>
+<h2 id="jian-jie-han-shu-yin-yong">间接函数引用</h2>
+<pre><code class="language-js">const obj1 = &#123;
+    name:&quot;obj1&quot;
+    foo:function()&#123;
+        console.log(this)
+    &#125;
+&#125;
+
+const obj2 = &#123;
+    name:&quot;obj2&quot;
+&#125;;
+
+(obj2.bar = obj1.foo)() // 作为独立的函数调用 output:window
+</code></pre>
+<h2 id="yin-shi-bang-ding">隐式绑定</h2>
+<pre><code class="language-js">// 他的调用位置中,是通过某个对象发起的函数调用
+function foo() &#123;
+  console.log(this);
+&#125;
+
+const obj = &#123;
+  name: 'ljq',
+  foo: foo,
+&#125;;
+
+const obj1 = &#123;
+  obj: obj,
+&#125;;
+
+obj.foo(); // obj
+
+obj1.obj.foo(); // obj
+
+const div = document.querySelector('.box');
+div.onclick = function () &#123;
+  console.log(this);
+&#125;;
+
+// 当点击box时 output:
+// &lt;div class=&quot;box&quot; style=&quot;width: 100px;height: 100px;background-color: red;&quot;&gt;&lt;/div&gt;
+// 所以其应该是进行了隐式绑定
+</code></pre>
+<h2 id="xian-shi-bang-ding">显式绑定</h2>
+<pre><code class="language-js">// 通过apply,call,bind进行绑定
+
+function foo() &#123;
+  console.log(this);
+&#125;
+
+var newFoo = foo.bind('aaa');
+
+newFoo(); // String
+
+const div = document.querySelector('.box');
+div.addEventListener('click', function () &#123;
+  console.log(this);
+&#125;);
+
+div.addEventListener('click', function () &#123;
+  console.log(this);
+&#125;);
+
+div.addEventListener('click', function () &#123;
+  console.log(this);
+&#125;);
+
+// 所有的click函数被存入一个数组
+// 当点击发生是遍历调用数组中的函数
+// fn.call(div)
+
+// 当点击box时 output:
+// &lt;div class=&quot;box&quot; style=&quot;width: 100px;height: 100px;background-color: red;&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>忽略显式绑定</p>
+<pre><code class="language-js">// apply,bind,call 当传入的值为 null/undefined 时,自动将this绑定为全局对象
+function foo() &#123;
+  console.log(this);
+&#125;
+
+foo.call(null); // window
+foo.apply(undefined); // window
+const data = foo.bind(null);
+data(); // window
+</code></pre>
+<h2 id="new-bang-ding">new 绑定</h2>
+<pre><code class="language-js">// 我们通过一个new关键字调用一个函数时(构造器),这个时候this是在调用这个构造器时创建出来的对象
+// this = 创建出来的对象
+// 这个过程就是new绑定
+
+function foo(name, age) &#123;
+  console.log(this);
+&#125;
+
+var p = new foo(); // foo&#123;&#125;
+</code></pre>
+<h2 id="jian-tou-han-shu">箭头函数</h2>
+<pre><code class="language-js">// 如果函数的执行体只有一行,那么&#123;&#125;可以省略,并且默认将这行代码的执行结果作为返回值
+// 箭头函数不适用this的四种规则,而是调用上层作用域中的this
+
+箭头函数与普通函数的区别
+1.语法更加清晰
+2.箭头函数不能作为构造函数调用(new)
+3.箭头函数没有&quot;arguments&quot;
+4.call(),bind()函数不能改变箭头函数的this指向
+5.箭头函数没有prototype
+6.箭头函数不会创建自己的this,其会继承上层作用域的this,且创建的上层作用域的
+</code></pre>
+<p>this 面试题</p>
+<pre><code class="language-js">var name = 'ljq';
+var person = &#123;
+  name: 'person',
+  sayName: function () &#123;
+    console.log(this.name);
+  &#125;,
+&#125;;
+function sayName() &#123;
+  var sss = person.sayName;
+  sss(); // ljq
+  person.sayName(); // person
+  person.sayName(); // person
+  (b = person.sayName)(); // ljq
+&#125;
+sayName();
+</code></pre>
+<pre><code class="language-js">var name = 'ljq';
+var person1 = &#123;
+  name: 'person1',
+  foo1: function () &#123;
+    console.log(this.name);
+  &#125;,
+  foo2: () =&gt; console.log(this.name),
+  foo3: function () &#123;
+    return function () &#123;
+      console.log(this.name);
+    &#125;;
+  &#125;,
+  foo4: function () &#123;
+    return () =&gt; &#123;
+      console.log(this.name);
+    &#125;;
+  &#125;,
+&#125;;
+
+var person2 = &#123; name: 'person2' &#125;;
+
+person1.foo1(); // person1
+person1.foo1.call(person2); // person2
+
+person1.foo2(); // ljq
+person1.foo2.call(person2); // ljq
+
+person1.foo3()(); // ljq
+person1.foo3.call(person2)(); //  ljq
+
+person1.foo4()(); // ljq
+person1.foo4.call(person2)(); // persno2
+</code></pre>
+<p>实现 apply,call,bind(手写 )</p>
+<pre><code>
+</code></pre>
+<p>arguments 的使用</p>
+<pre><code class="language-js">// 在浏览器中全局状态下没有arguments , nodejs下有
+</code></pre>
+<h1 id="han-shu-shi-bian-cheng">函数式编程</h1>
+<h2 id="chun-han-shu">纯函数</h2>
+<pre><code class="language-js">// 确定的输入,一定会产生确定的输出
+// 函数的执行过程中,不会产生副作用(副作用的概念就是,在执行一个函数的时候,除了返回函数值外,还对调用函数产生了附加的影响,例如修改的全局变量,修改参数或者改变外部储存)
+</code></pre>
+<h2 id="ke-li-hua">柯里化</h2>
+<pre><code class="language-js">// 将多个传入参数,拆分成多个函数调用的过程
+const sum = function (x) &#123;
+  return function (y) &#123;
+    return function (z) &#123;
+      return x + y + z;
+    &#125;;
+  &#125;;
+&#125;;
+
+const res = sum(10)(20)(30);
+console.log(res); // 60
+
+// 使用箭头函数简写
+
+const sum1 = (x) =&gt; (y) =&gt; (z) =&gt; x + y + z;
+const res1 = sum(10)(20)(30);
+console.log(res1); // 60
+
+// 为什么需要柯里化
+// 函数式编程中我们往往希望一个函数处理的问题单一,而不是将一大堆处理过程中交给一个函数来处理
+
+// 模板字符串应用的柯里化
+const log = function (date, type, message) &#123;
+  console.log(`[$&#123;date.getHours()&#125;:$&#123;date.getMinutes()&#125;][$&#123;type&#125;]:[$message]`);
+&#125;;
+
+log(new Date(), 'DEBUG', '查找到轮播图BUG');
+log(new Date(), 'DEBUG', '查找到菜单BUG');
+log(new Date(), 'DEBUG', '查找到数据BUG');
+
+//柯里化的优化
+const log1 = (date) =&gt; (type) =&gt; (message) =&gt;
+  console.log(`[$&#123;date.getHours()&#125;:$&#123;date.getMinutes()&#125;][$&#123;type&#125;]:[$message]`);
+
+// 定制化
+// 如果要打印的都是当前时间
+const nowlog = log1(new Date());
+nowlog('DEBUG')('查找到菜单BUG');
+nowlog('DEBUG')('查找到轮播图BUG');
+
+// 自动转柯里化函数的实现(手写)
+</code></pre>
+<h2 id="zu-he-han-shu-shou-xie">组合函数(手写)</h2>
+<pre><code class="language-js">
+</code></pre>
+<h1 id="yan-ge-mo-shi">严格模式</h1>
+<pre><code class="language-js">// 严格模式下,不允许静默错误
+// 不允许原先的八进制
+// with 语句不允许使用
+// eval函数不允许向上引用变量
+// 自执行函数(默认绑定)会指向undefined
+// setTimeout的this不变(指向window)
+</code></pre>
+<h1 id="js-de-mian-xiang-dui-xiang">JS 的面向对象</h1>
+<pre><code class="language-js">Object.defineProperty(objName,objKeyName,descriptor//属性描述符) // 对对象中的属性做操作
+// 数据属性描述符
+  Configurable:表示属性是否能够通过delete删除属性 false表示不可配置(删除,修改)
+  也不可以重新定义属性描述符
+
+  enumerable:表示属性是否能被枚举(是否能被for-in或Object.key()返回该属性)
+
+  writeable: 表示属性是否能被修改(写入)
+
+//存取属性描述符
+  1.隐藏某一个私有属性不被外界直接使用和赋值
+    js并没有私有属性的定义 社区中默认 _keyName为私有属性
+  2.截获某一个属性它访问和设置值的过程
+	get:function()&#123;&#125;
+    set:function()&#123;&#125;
+
+
+
+Object.defineProperty(obj,&quot;height&quot;,&#123;
+    //配置
+    value:1.88
+&#125;)
+
+
+// 也可以一次性对多个属性配置属性描述符
+Object.defineProperty(obj,&#123;
+    name:&#123;
+        Configurable:false
+        writable:false
+        value:&quot;ljq&quot;
+    &#125;,
+    age:&#123;
+        Configurable:false
+        writable:false
+        value:20
+    &#125;
+&#125;)
+
+//获取属性描述符
+Object.getOwnPropertyDescriptor(obj_nmae,obj_key_name)
+Object.getOwnPropertyDescriptors()
+
+
+// 对对象进行限制
+Object.seal(obj_name) // 禁止对象配置/修改删除里面的属性
+Object.freeze(obj_name) // 属性不可修改
+</code></pre>
+<h2 id="gong-han-mo-shi">工厂模式</h2>
+<pre><code class="language-JS">// 工厂模式:工厂函数
+function createPerson(name,age,height,address)&#123;
+    const newObejct = &#123;&#125;
+    newObject.name = name
+    newObject.age = age
+    newObject.height = height
+    newObject.address = address
+
+    return newObject
+&#125;
+
+const p1 = createPerson(&quot;ljq&quot;,20,176,&quot;株洲市&quot;)
+</code></pre>
+<h2 id="gou-zao-han-shu">构造函数</h2>
+<pre><code class="language-js">// new 操作符
+当一个new操作符被调用,那么他会执行如下操作
+1.在内存中创建一个新的空对象
+2.这个对象内部的prototype属性会被赋值为该构造函数的prototype属性
+3.构造函数内部的this会指向创建出来的新对象
+4.执行函数内部的代码(函数体代码)
+5.如果构造函数没有返回非空对象,则返回创建出来的新对象
+
+手写
+</code></pre>
+<h1 id="ji-cheng-yu-yuan-xing-lian">继承与原型链</h1>
+<pre><code class="language-js">// 我们每个对象中提供了一个prototype,这个属性可以称为对象的原型(隐式原型)
+// 浏览器和node中支持查询隐式原型(__proto__)
+// ES5后提供了一个方法查看原型
+Object.getPrototypeOf(obj_name);
+
+// 函数也是一个对象
+// console.log(foo.__proto__) 函数作为对象来说 他也是有[[prototype]]隐式原型的
+
+// 函数因为他是一个函数,所以他还会多出一个显示原型属性:prototype
+console.log(foo.prototype);
+</code></pre>
+<p>当函数被 new 关键字创建后,他的执行过程为</p>
+<pre><code class="language-js">function Foo() &#123;&#125;
+
+var p1 = new Foo();
+var p2 = new Foo();
+</code></pre>
+<img src="/2023/07/19/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Users\ND_LJQ\Desktop\js\images\无标题.png" alt="无标题" style="zoom:200%;">
+<p>创建对象方案</p>
+<pre><code class="language-js">// 将函数通用属性加入函数原型
+function Person(name, age, height, address) &#123;
+  this.name = name;
+  this.age = age;
+  this.height = height;
+  this.address = address;
+&#125;
+
+Person.prototype.eating = function () &#123;
+  console.log(this.name + '在吃东西');
+&#125;;
+
+Person.prototype.running = function () &#123;
+  console.log(this.name + '在跑步');
+&#125;;
+</code></pre>
+<h2 id="yuan-xing-lian">原型链</h2>
+<pre><code class="language-js">
+</code></pre>
+<p>参数中的&quot;[]&quot;代表可选</p>
+<h1 id="cao-zuo-zi-fu-chuan-de-fang-fa">操作字符串的方法</h1>
+<h2 id="index-of">indexOf()</h2>
+<pre><code class="language-js">String.indexOf(searchValue, [fromIndex]);
+// 返回子字符或字符串在父字符串中首次出现的索引位置
+// 若子字符串不存在则会返回 -1
+// 若 fromIndex 大于字符串长度,则会返回父字符串长度
+// 该方法区分大小写
+String.lastIndexOf(searchValue, [fromIndex]);
+// 返回子字符或字符串在父字符串中最后一次出现的索引位置
+</code></pre>
+<h2 id="char-at">charAt()</h2>
+<pre><code class="language-js">String.charAt(index); // 获得字符串指定位置的字符
+</code></pre>
+<h2 id="touppercase">touppercase()</h2>
+<pre><code class="language-js">String.toUpperCase();
+// 将字符串中的字符全变为大写后返回一个新字符串,原字符串不变
+String.tolowerCase();
+// 将字符串中的字符全变为小写后返回一个新字符串,原字符串不变
+</code></pre>
+<h2 id="concat">concat()</h2>
+<pre><code class="language-js">String.concat(str, [...strN]);
+// 将一个或多个字符串与原字符串串联合并,返回一个新字符串
+</code></pre>
+<h2 id="slice">slice()</h2>
+<pre><code class="language-js">String.slice(beginIndex, [endIndex]);
+// 提取父字符串自 beginIndex 位置开始 [到 endIndex 结束]的字符/字符串
+// 并返回一个新字符串,原字符串不变
+// slice()不传参数会返回一个跟原数组一样的新数组
+// 若 beginIndex/endIndex 的值为负数
+// 则其值看成 str.length-beginIndex/endIndex
+// 若 beginIndex 大于 endIndex 则 slice 的执行的效果为 从 beginIndex 开始向前截取到 endIndex
+</code></pre>
+<h2 id="sub-string">subString()</h2>
+<pre><code class="language-js">String.subString(indexStart, [indexEnd]);
+// 返回一个提取自字符串 indexStart 开始[至indexEnd 结束]的一个新的子字符串
+// 如果参数中的值小于 '0' 或者 'NaN' 则自动默认为0
+// 如果参数中的任意一值大于父字符串的长度 那么该值默认为父字符串的长度
+// 如果 indexStart 大于 indexEnd，则 substring 的执行效果就像两个参数调换了一样。
+// 即 String.subString(indexEnd,indexStart)
+</code></pre>
+<h2 id="sub-str">subStr()</h2>
+<pre><code class="language-js">String.subStr(strat, [length]); //该方法半遗弃,尽量避免使用
+</code></pre>
+<h2 id="split">split()</h2>
+<pre><code class="language-js">String.split([separator, [limit]]);
+// 以 separator 字符/字符串或正则表达式来切割原字符 ,用 limit(number) 来限制返回的数组中
+// 切割后的片段的数量
+// 若不传参,则返回原字符串的数组
+// 若以 &quot;&quot;/'' 来作为分隔符可能会破坏 unicode 安全
+// 例:
+// const a = '𝟘𝟙𝟚𝟛'.split('');
+// console.log(a);
+// Output: [&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;,&quot;�&quot;]
+// 这时候推荐使用es6的拓展运算符 &quot;...&quot; 来解决
+// 例:
+// const a = '𝟘𝟙𝟚𝟛'
+// console.log([...a])
+// Output: ['𝟘', '𝟙', '𝟚', '𝟛']
+</code></pre>
+<h2 id="trim">trim()</h2>
+<pre><code class="language-js">String.trim();
+//去除字符串两端空白
+//该方法返回一个新的去除字符串两端空白的新字符串,并不影响原字符串本身
+</code></pre>
+<h2 id="replace">replace()</h2>
+<pre><code class="language-js">String.replace(regexp|subStr , newSubStr|function)
+// 将字符串中某个字符串/字符(subStr),替换成新字符(newSubStr)
+// 若是是一个function,则newSubStr为function的返回值
+// 第一个参数是subStr则只有第一个匹配项会被替换
+// 若第一个参数是正则表达式则正则所匹配到的对象会被替换
+</code></pre>
+<h1 id="cao-zuo-shu-zu-de-fang-fa">操作数组的方法</h1>
+<p>数组的扁平化</p>
+<pre><code class="language-js">Array.flat();
+Array.toString().split();
+</code></pre>
+<h2 id="bu-hui-gai-bian-yuan-shi-shu-zu-de-fang-fa">不会改变原始数组的方法</h2>
+<h3 id="index-of-1">indexOf()</h3>
+<pre><code class="language-js">Array.indexOf(searchElement, [fromIndex]);
+// 查找某一个值在数组中首次出现的位置
+// fromIndex 参数若大于 Array.length 则默认不会从数组中查找,返回 -1
+// 若小于 0 则其默认为数组长度的抵消值,若抵消值仍为负数则默认为 0
+// 即若数组长度为6 fromIndex值为 -1 则意味着从索引为 6+(-1) 开始查找
+</code></pre>
+<h3 id="slice-1">slice()</h3>
+<pre><code class="language-js">Array.slice(begin, [end]);
+// 返回数组的某一部分(浅拷贝)
+// 提取从原数组中从索引 begin 到 end 中的元素
+// 若参数为负,则其值默认为 array.length + 参数值
+// 若 |begin| &gt; |end| 则会返回一个空数组,不会将end和begin交换
+</code></pre>
+<h3 id="concat-1">concat()</h3>
+<pre><code class="language-js">Array.concat(value1, [...valueN]);
+// 将原数组进行浅拷贝的副本与参数中的数组/单个元素进行合并,返回合并后的副本
+</code></pre>
+<h3 id="join">join()</h3>
+<pre><code class="language-js">Array.join([separator]);
+// 将数组中的元素拼接起来后返回一个总的字符串
+// 可选参数separator 是指定每个元素之间的分隔符
+// 如果缺省参数 separator 则每个元素之间默认分隔符为&quot;,&quot;
+// 如果参数是空字符串(&quot;&quot;)则每个元素之间没有任何字符
+// 若数组中的某一个元素为 undefined 或 null ,则返回的字符串为空字符串
+</code></pre>
+<h3 id="filter">filter()</h3>
+<pre><code class="language-js">Array.fliter(callbackFunction(element, [index]));
+// 创建一个新数组，其包含通过所提供函数实现的测试的所有元素
+// callbackFunction为测试数组每个元素的函数 返回true则表示该元素通过测试,保留该元素,反之则返回false,不保留该元素
+// callbackFunction中的 element参数则是当前测试的元素 index是正在测试中的元素在原数组中的索引
+</code></pre>
+<h3 id="reduce">reduce()</h3>
+<pre><code class="language-js">Array.reduce(reducer, [initiaValue]);
+// 方法对数组中的每个元素按序执行一个由您提供的 reducer 函数，每一次运行 reducer 会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
+//reducer = function(previousValue,currentValue,[currentIndex])&#123;&#125;
+// previousValue 为 上次调用reducer返回的的值
+// currentValue 为 数组中正在处理的元素
+// currentIndex 为 数组中正在处理的元素在数组中的索引值
+// 作为第一次调用 reducer 函数时参数 previousValue 的值。若指定了初始值 initialValue，则 currentValue 则将使用数组第一个元素；否则 previousValue 将使用数组第一个元素，而 currentValue 将使用数组第二个元素
+</code></pre>
+<h3 id="map">map()</h3>
+<pre><code class="language-js">Array.map(callbackFunction, [thisArg]);
+// callbackFunction(currentValue,[index]) 为数组每一个元素执行该函数 并返回一个由原数组每个元素执行回调函数的结果组成的新数组
+// currentValue为当前所处理的元素
+// index 为当前所处理元素在数组中的索引值
+// thisArg 为当执行回调函数 callbackFunction时，用作 this 的值。
+</code></pre>
+<h2 id="hui-gai-bian-yuan-shi-shu-zu-de-fang-fa">会改变原始数组的方法</h2>
+<h3 id="push">push()</h3>
+<pre><code class="language-js">Array.push(element1, ..., elementN)
+// 将元素添加到数组末尾
+// 调用该方法时的返回值为新数组的length
+</code></pre>
+<h3 id="pop">pop()</h3>
+<pre><code class="language-js">Array.pop();
+// 从数组中删除最后一个元素 并返回被删除的元素
+// 在空数组中调用pop(),将返回undefined
+</code></pre>
+<h3 id="shift">shift()</h3>
+<pre><code class="language-js">Array.shift();
+// 从数组中删除索引为0的元素 并返回被删除的元素
+// 在空数组中调用shift(),将返回undefined
+</code></pre>
+<h3 id="unshift">unshift()</h3>
+<pre><code class="language-js">Array.unshift(element1, [...elementN]);
+// 将一个或多个元素添加到数组开头,并返回该数组的新length
+// 当传入参数为多个值时,它们将被以 块 的形式被插入到对象开始位置,他们的顺序和被传入时的顺序一致,所以，传入多个参数调用一次 unshift()，和传入一个参数调用多次 unshift()（例如，循环调用），它们将得到不同的结果。例如：
+let arr = [4, 5, 6];
+
+arr.unshift(1, 2, 3);
+console.log(arr);
+// [1, 2, 3, 4, 5, 6]
+
+arr = [4, 5, 6]; // 重置数组
+
+arr.unshift(1);
+arr.unshift(2);
+arr.unshift(3);
+
+console.log(arr);
+// [3, 2, 1, 4, 5, 6]
+</code></pre>
+<h3 id="sort">sort()</h3>
+<pre><code class="language-js">Array.sort([compareFunction(a, b)]);
+// 将数组按照某一规则来进行排序,返回排序后的数组
+// 若不指定规则则默认将数组中的元素转换为字符串的逐个字符的unicode位点进行排序
+// 若指定compareFunction(a,b) 那么数组会按照调用该函数返回值进行排序
+// 如果compareFunction(a,b) 大于 0 那么b会排列到a之前
+// 如果compareFunction(a,b) 小于 0 那么a会排列到b之前
+// 如果compareFunction(a,b) 等于 0 那么a与b的相对位置不变
+</code></pre>
+<h3 id="splice">splice()</h3>
+<pre><code class="language-js">Array.splice(start, [deleteCount, [item1, ...itemN]]);
+// 删除或替换或添加元素来修改数组,并以数组的方式返回被删除元素所组成的数组
+// 从指定修改从 start 索引开始修改
+// 若 start 的值大于Array.length则意味着从数组末尾开始修改
+// 若 start 的值为负数 则值默认为Array.length + start的值
+// 若 start 的值为负数 且绝对值大于Array.length 则默认为0
+// deleteCount为删除元素的个数
+// item1-itemN为需要添加进数组的元素
+</code></pre>
+<h3 id="for-each">forEach()</h3>
+<pre><code class="language-js">Array.forEach(callbackFucntion);
+// callbackFunction(currentValue,[index],[thisArg]) 为数组每一个元素执行该函数
+// currentValue为当前所处理的元素
+// index 为当前所处理元素在数组中的索引值
+// thisArg 为当执行回调函数 callbackFunction时，用作 this 的值。
+</code></pre>
+<h1 id="es-6-xin-te-xing">ES6 新特性</h1>
+<h2 id="set-dui-xiang">Set()对象</h2>
+<pre><code class="language-js">// Set 对象允许储存任何类型的唯一值,无论是原始值或是对象引用
+const newSet = new Set();
+// Set的一些实例方法
+Set.size(); // 返回Set对象中值的个数
+Set.add(value); // 在Set对象的尾部添加一个元素并返回,该Set对象
+Set.has(value); // 查询Set对象中是否有value值 返回一个布尔值
+Set.value(); // 返回一个Set迭代器对象内包含Set对象中按插入属性顺序摆列的所有元素
+Set.delete(value); // 删除Set对象中的value值
+Set.forEach(callback); // dddd
+
+// 使用Set进行数组去重
+const arr = [1, 1, 2, 2, 3, 3, 4, 4];
+const arrSet = new Set(arr);
+return [...arrSet];
+
+// 利用Set将字符串转为数组
+const str = 'hello';
+const newSet = new Set(str);
+return [...newSet];
+
+// 用Set获得并集
+const arr1 = [1, 2, 3, 4];
+const arr2 = [3, 4, 5, 6];
+const newSet = new Set([...arr1, ...arr2]); // &#123;1, 2, 3, 4, 5, 6&#125;
+
+// 用Set获得交集
+const arr1 = [1, 2, 3, 4];
+const arr2 = [3, 4, 5, 6];
+const newSet = new Set([...arr1].fliter((e) =&gt; arr2.has(e)));
+</code></pre>
+<h2 id="symbol">Symbol()</h2>
+<pre><code class="language-js">//symbol 是一种基本数据类型（primitive data type）。Symbol() 函数会返回 symbol 类型的值
+// 每个从Symbol()方法返回的值都是唯一的
+// 但是Symbol 不支持 new Symbol() 构造
+</code></pre>
+<h2 id="map-dui-xiang">Map()对象</h2>
+<pre><code class="language-js">// Map 对象保存键值对，并且能够记住键的原始插入顺序。任何值（对象或者基本类型）都可以作为一个键或一个值。
+const newMap = new Map();
+</code></pre>
+<h2 id="es-6-de-sheng-yu-can-shu">es6 的剩余参数</h2>
+<pre><code class="language-js">// rest parameters
+function foo(...nums) &#123;
+  //nums是形参名  =&gt; var nums = [  ]
+&#125;
+
+foo(10);
+foo(10, 20, 30);
+foo(10, 20, 30, 40);
+</code></pre>
+<h2 id="es-6-zhan-kai-yun-suan-fu">Es6 展开运算符</h2>
+<pre><code class="language-js">var nums = ['abc', 'cba', 'bac'];
+foo(...nums);
+</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='7bbd114371cb2cd73dc2'
+        data-cs='fd7cda0eb23cbb69b65e291c5b607b196613a6b1'
+        data-r='nd-ljq.github.io'
+        data-o='ND-LJQ'
+        data-a='ND-LJQ'
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/head.jpg" height=300 width=300></img>
+                    <p>ND_LJQ</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        
+                            
+                                <dd><a href="https://github.com/ND-LJQ'" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">8 <p>Articles</p></a></li>
+                    <li><a href="/categories">9 <p>Categories</p></a></li>
+                    <li><a href="/tags">8 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#xiao-zhi-shi"><span class="toc-number">1.</span> <span class="toc-text">小知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#liu-lan-qi-de-xuan-ran-guo-cheng"><span class="toc-number">2.</span> <span class="toc-text">浏览器的渲染过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-yin-qing"><span class="toc-number">3.</span> <span class="toc-text">Js 引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#v-8-yin-qing"><span class="toc-number">3.1.</span> <span class="toc-text">V8 引擎</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-de-nei-cun-guan-li-he-bi-bao"><span class="toc-number">4.</span> <span class="toc-text">js 的内存管理和闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#js-de-la-ji-hui-shou-gc"><span class="toc-number">4.1.</span> <span class="toc-text">js 的垃圾回收(GC)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bi-bao"><span class="toc-number">4.2.</span> <span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bi-bao-de-nei-cun-xie-lu"><span class="toc-number">4.2.1.</span> <span class="toc-text">闭包的内存泄露</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#han-shu-zhong-de-this-zhi-xiang"><span class="toc-number">5.</span> <span class="toc-text">函数中的 this 指向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mo-ren-bang-ding"><span class="toc-number">5.1.</span> <span class="toc-text">默认绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jian-jie-han-shu-yin-yong"><span class="toc-number">5.2.</span> <span class="toc-text">间接函数引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yin-shi-bang-ding"><span class="toc-number">5.3.</span> <span class="toc-text">隐式绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xian-shi-bang-ding"><span class="toc-number">5.4.</span> <span class="toc-text">显式绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-bang-ding"><span class="toc-number">5.5.</span> <span class="toc-text">new 绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jian-tou-han-shu"><span class="toc-number">5.6.</span> <span class="toc-text">箭头函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#han-shu-shi-bian-cheng"><span class="toc-number">6.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#chun-han-shu"><span class="toc-number">6.1.</span> <span class="toc-text">纯函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ke-li-hua"><span class="toc-number">6.2.</span> <span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zu-he-han-shu-shou-xie"><span class="toc-number">6.3.</span> <span class="toc-text">组合函数(手写)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#yan-ge-mo-shi"><span class="toc-number">7.</span> <span class="toc-text">严格模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js-de-mian-xiang-dui-xiang"><span class="toc-number">8.</span> <span class="toc-text">JS 的面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gong-han-mo-shi"><span class="toc-number">8.1.</span> <span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gou-zao-han-shu"><span class="toc-number">8.2.</span> <span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ji-cheng-yu-yuan-xing-lian"><span class="toc-number">9.</span> <span class="toc-text">继承与原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yuan-xing-lian"><span class="toc-number">9.1.</span> <span class="toc-text">原型链</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cao-zuo-zi-fu-chuan-de-fang-fa"><span class="toc-number">10.</span> <span class="toc-text">操作字符串的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#index-of"><span class="toc-number">10.1.</span> <span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#char-at"><span class="toc-number">10.2.</span> <span class="toc-text">charAt()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#touppercase"><span class="toc-number">10.3.</span> <span class="toc-text">touppercase()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#concat"><span class="toc-number">10.4.</span> <span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice"><span class="toc-number">10.5.</span> <span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sub-string"><span class="toc-number">10.6.</span> <span class="toc-text">subString()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sub-str"><span class="toc-number">10.7.</span> <span class="toc-text">subStr()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split"><span class="toc-number">10.8.</span> <span class="toc-text">split()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trim"><span class="toc-number">10.9.</span> <span class="toc-text">trim()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">10.10.</span> <span class="toc-text">replace()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cao-zuo-shu-zu-de-fang-fa"><span class="toc-number">11.</span> <span class="toc-text">操作数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bu-hui-gai-bian-yuan-shi-shu-zu-de-fang-fa"><span class="toc-number">11.1.</span> <span class="toc-text">不会改变原始数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#index-of-1"><span class="toc-number">11.1.1.</span> <span class="toc-text">indexOf()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice-1"><span class="toc-number">11.1.2.</span> <span class="toc-text">slice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-1"><span class="toc-number">11.1.3.</span> <span class="toc-text">concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-number">11.1.4.</span> <span class="toc-text">join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-number">11.1.5.</span> <span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-number">11.1.6.</span> <span class="toc-text">reduce()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-number">11.1.7.</span> <span class="toc-text">map()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hui-gai-bian-yuan-shi-shu-zu-de-fang-fa"><span class="toc-number">11.2.</span> <span class="toc-text">会改变原始数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push"><span class="toc-number">11.2.1.</span> <span class="toc-text">push()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop"><span class="toc-number">11.2.2.</span> <span class="toc-text">pop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift"><span class="toc-number">11.2.3.</span> <span class="toc-text">shift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift"><span class="toc-number">11.2.4.</span> <span class="toc-text">unshift()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-number">11.2.5.</span> <span class="toc-text">sort()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-number">11.2.6.</span> <span class="toc-text">splice()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-each"><span class="toc-number">11.2.7.</span> <span class="toc-text">forEach()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#es-6-xin-te-xing"><span class="toc-number">12.</span> <span class="toc-text">ES6 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set-dui-xiang"><span class="toc-number">12.1.</span> <span class="toc-text">Set()对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol"><span class="toc-number">12.2.</span> <span class="toc-text">Symbol()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-dui-xiang"><span class="toc-number">12.3.</span> <span class="toc-text">Map()对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es-6-de-sheng-yu-can-shu"><span class="toc-number">12.4.</span> <span class="toc-text">es6 的剩余参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es-6-zhan-kai-yun-suan-fu"><span class="toc-number">12.5.</span> <span class="toc-text">Es6 展开运算符</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            ND_LJQ
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/sql/sql.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/java/java.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/c/c.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/html/html.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>
