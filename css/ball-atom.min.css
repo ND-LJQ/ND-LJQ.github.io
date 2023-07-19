@@ -4,13 +4,12 @@
  * Licensed under MIT
  */
 
- @font-face {
-	font-family:'FZZhunYuan-M02S' ;
-	src: url('../font/FZZhunYuan-M02S.ttf');
+@font-face {
+  font-family: 'FZZhunYuan-M02S';
+  src: url('../font/FZZhunYuan-M02S.ttf');
 }
 
-
-.html{
+.html {
   font-family: 'FZZhunYuan-M02S';
 }
 

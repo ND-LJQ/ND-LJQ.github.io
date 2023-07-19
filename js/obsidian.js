@@ -24,6 +24,12 @@ function scrollSpy(menuSelector, options) {
     lastId = null,
     active = $();
 
+  $(document).on('click', 'a', function (event) {
+    if ($(this).has('img').length) {
+      return true;
+    }
+  });
+
   $(window).scroll(function () {
     // Get container scroll position
     var fromTop = $(this).scrollTop() + offset;
@@ -43,7 +49,9 @@ function scrollSpy(menuSelector, options) {
       var newActive = [];
 
       for (
-        var target = menu.find('[href="#' + id + '"],[href="#' + encodeURIComponent(id) + '"]');
+        var target = menu.find(
+          '[href="#' + id + '"],[href="#' + encodeURIComponent(id) + '"]'
+        );
         target.length && !target.is(menu);
         target = target.parent()
       ) {
@@ -166,9 +174,13 @@ var Obsidian = {
   HS: function (tag, flag) {
     var id = tag.data('id') || 0,
       url = tag.attr('href'),
-      title = (tag.attr('title') || tag[0].innerText) + ' - ' + $('#config-title').text();
+      title =
+        (tag.attr('title') || tag[0].innerText) +
+        ' - ' +
+        $('#config-title').text();
 
-    if (!$('#preview').length || !(window.history && history.pushState)) location.href = url;
+    if (!$('#preview').length || !(window.history && history.pushState))
+      location.href = url;
     Obsidian.loading();
     var state = {
       d: id,
@@ -524,7 +536,8 @@ var Obsidian = {
       title: document.title,
       description: document.description,
       wechatQrcodeTitle: '微信扫一扫：分享', // 微信二维码提示文字
-      wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+      wechatQrcodeHelper:
+        '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
     };
 
     socialShare('.share-component-cc', $config);
@@ -868,7 +881,8 @@ var Obsidian = {
         .trim()).split(/\s+/) || [t])[0],
       r = Obsidian.v(t, n);
     return (
-      r || t == i || (r = Obsidian.v(i.replace(/(^[.])|(,$)/g, ''), n)), r || (n ? i : e ? null : t)
+      r || t == i || (r = Obsidian.v(i.replace(/(^[.])|(,$)/g, ''), n)),
+      r || (n ? i : e ? null : t)
     );
   },
   loadingOut: function () {
@@ -958,7 +972,11 @@ $(function () {
       }
       var topHeader = document.querySelector('#top');
       var homeIcon = document.querySelector('#home-icon');
-      if (topHeader && $('.scrollbar').length && !$('.icon-images').hasClass('active')) {
+      if (
+        topHeader &&
+        $('.scrollbar').length &&
+        !$('.icon-images').hasClass('active')
+      ) {
         if (newOffset > articleMenuHeight) {
           if (newOffset > articleRefOffset) {
             topHeader.classList.remove('animateIn');
@@ -1035,9 +1053,12 @@ $(function () {
       clone;
 
     // .content > ... > img
-    if (e.target.nodeName == 'IMG' && $(e.target).parents('div.content').length > 0) {
-      tag = 'pimg';
-    }
+    // if (
+    //   e.target.nodeName == 'IMG' &&
+    //   $(e.target).parents('div.content').length > 0
+    // ) {
+    //   tag = 'pimg';
+    // }
     if (!tag && !rel) return;
     switch (true) {
       case tag.indexOf('share') != -1:
@@ -1087,7 +1108,10 @@ $(function () {
           function (data) {
             var link = $(data).find('.more').attr('href');
             if (link != undefined) {
-              tag.attr('href', link).html(tag.attr('data-load-more')).data('status', 'loaded');
+              tag
+                .attr('href', link)
+                .html(tag.attr('data-load-more'))
+                .data('status', 'loaded');
               tag.data('page', parseInt(tag.data('page')) + 1);
             } else {
               $('#pager').remove();
@@ -1102,8 +1126,8 @@ $(function () {
               },
               500
             );
-            document.querySelectorAll('pre code').forEach(block => {
-              if(typeof hljs !== 'undefined') hljs.highlightBlock(block);
+            document.querySelectorAll('pre code').forEach((block) => {
+              if (typeof hljs !== 'undefined') hljs.highlightBlock(block);
             });
             Obsidian.setCodeRowWithLang();
             if ($('#vcomments').length) {
@@ -1181,7 +1205,9 @@ $(function () {
         } else {
           hash = $(e.target).attr('href');
         }
-        to = $('.content :header').find('[href="' + hash + '"],[href="' + decodeURIComponent(hash) + '"]');
+        to = $('.content :header').find(
+          '[href="' + hash + '"],[href="' + decodeURIComponent(hash) + '"]'
+        );
         $('html,body').animate(
           {
             scrollTop: to.offset().top - 80,
@@ -1226,7 +1252,8 @@ $(function () {
             getThumbBoundsFn: function (index) {
               // See Options -> getThumbBoundsFn section of documentation for more info
               var thumbnail = imgs[index],
-                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                pageYScroll =
+                  window.pageYOffset || document.documentElement.scrollTop,
                 rect = thumbnail.getBoundingClientRect();
 
               return {
@@ -1236,7 +1263,12 @@ $(function () {
               };
             },
           };
-          var lightBox = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+          var lightBox = new PhotoSwipe(
+            pswpElement,
+            PhotoSwipeUI_Default,
+            items,
+            options
+          );
           lightBox.init();
         }
         return false;
@@ -1252,7 +1284,7 @@ $(function () {
           id: md5(window.location.pathname),
           distractionFreeMode: comment.data('d'),
           proxy: comment.data('p'),
-          labels: ['Gitalk']
+          labels: ['Gitalk'],
         });
         $('.comment').removeClass('link');
         gitalk.render('gitalk-container');
@@ -1294,7 +1326,8 @@ $(function () {
         });
         $('.category-mask').fadeOut(500);
         return false;
-      case tag.indexOf('search-bar') != -1 || tag.indexOf('search-box-close') != -1:
+      case tag.indexOf('search-bar') != -1 ||
+        tag.indexOf('search-box-close') != -1:
         var searchBox = $('.search-box'),
           searchBoxDisplay = $('.search-box').css('display');
 

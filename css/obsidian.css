@@ -810,9 +810,7 @@ body.touch .article {
   box-shadow: 0 0 30px #000;
 }
 .nav .menu a {
-  color: #333;
   -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
   -webkit-box-decoration-break: clone !important;
   box-decoration-break: clone !important;
 }
@@ -1080,7 +1078,6 @@ footer .copyright a {
   background: rgba(255,255,255,0.96);
   opacity: 0.86;
   -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
   -webkit-box-decoration-break: clone !important;
   box-decoration-break: clone !important;
   height: 32px;
